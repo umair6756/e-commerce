@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+header {
+ 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 63px);  
+  position: relative;
+  width: 100%;
+}
+
+header * {
+  z-index: 1;
+}
+
+header::after {
+  content: '';
+  background-color: #000;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 4em;
+  text-align: center;
+  width: 60%;
+}
+
+.navBar {
+  /* background-color: #fff; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 15px;
+  
+}
+
+.navBar.scrolled{
+  background-color: #fff;
+}
+
+.navBar p {
+  color: #C19A6B;
+  font-weight: bold;
+  margin: 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.burger {
+  border: 0;
+  cursor: pointer;
+  display: none;
+  font-size: 22px;
+  position: relative;
+  padding: 0;
+  outline: none;
+  height: 30px;
+  width: 30px;
+}
+
+.burger:active {
+  color: #0594EC;
+  outline: none;
+}
+
+.burger .bar {
+  background-color: #0594EC;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  height: 3px;
+  width: 20px;
+  transition: transform 0.2s ease;
+}
+
+.burger .bar:first-of-type {
+  top: 40%;
+}
+
+.burger .bar:last-of-type {
+  top: 60%;
+}
+
+#navList {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+
+
+.dropdown .dropLinks{
+  /* display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  
+  list-style: none;
+  padding: 0;
+  margin-top:1.5rem ; 
+  width: 13rem;
+  padding-top: 1rem;
+  
+  opacity: 0;
+  overflow: hidden;
+  min-height: auto;
+
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  transition: all .5s ease; */
+
+
+
+  background: #f0f0f0;
+  height: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  
+  top: 25px;
+  /* width: 100%; */
+  width: 13rem;
+  
+  list-style: none;
+  display: none;
+  
+  
+
+
+  
+}
+
+
+
+
+#navList .dropdown:hover .dropLinks {
+ display: block;
+ opacity: 1;
+ z-index: 100;
+ height: auto;
+
+
+
+
+}
+
+.dropdown .dropLinks li{
+  padding: 1rem;
+  
+}
+
+.dropdown .dropLinks li a:hover{
+  font-size: 1.2rem;
+}
+
+
+
+#navList li {
+  margin: 0 15px;
+}
+
+
+
+
+
+#navList li a {
+  color: #222;
+  opacity: 1;
+  position: relative;
+  text-decoration: none;
+}
+
+#navList li a:hover{
+  color: #C19A6B;
+}
+
+
+
+#navList li a::after {
+  content: '';
+  background-color: #C19A6B;
+  position: absolute;
+  bottom: -9px;
+  left: -30%;
+  opacity: 0;
+  height: 2px;
+  width: 35%;
+  transition: transform 0.3s ease;
+}
+
+#navList li a:hover::after {
+  opacity: 1;
+  transform: translateY(-17px);
+}
+
+
+
+#navList li.no-hover a::after {
+  content: none;  /* This removes the ::after pseudo-element */
+}
+
+#navList li.no-hover a:hover::after {
+  opacity: 0;  /* This ensures there's no hover effect */
+  transform: none;  /* This prevents the movement */
+}
+
+
+
+
+.userCart{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  
+  
+}
+
+.userCart li .userCartLinks{
+  color: #222;
+  transition: .6s;
+}
+
+.userCart li .userCartLinks:hover{
+  color: #C19A6B;
+}
+
+.cart-length{
+  position: absolute;
+  bottom: 70%;
+  right: 5%;
+  font-size: 12px;
+  z-index: 100;
+
+
+ color: #C19A6B;
+}
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+  
+  .burger {
+    display: block;
+  }
+  
+  .burger.show-x .bar:first-of-type {
+    transform: translate(-50%, 50%) rotate(225deg);
+  }
+  
+  .burger.show-x .bar:last-of-type {
+    transform: translate(-50%, -150%) rotate(-225deg);
+  }
+  
+  #navList {
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    top: 80px;
+    left: 0%;
+    transform: translateX(120%);
+    width: 100%;
+    transition: transform 0.3s ease-in;
+    z-index: 100;
+  }
+  
+  #navList.show {
+    transform: translateX(0);
+  }
+  
+  #navList li {
+    margin: 15px;
+  }
+}
+
+
+
+
+
+
+

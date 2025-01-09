@@ -1,0 +1,550 @@
+.viewBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewMore{
+    height: 3rem;
+    width: 9rem;
+    border: 2px solid #C19A6B;
+    display: block;
+    margin-bottom: 5rem;
+    text-align: center;
+    padding-top: .6rem;
+    text-decoration: none;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+    color: #C19A6B;
+    transition: .6s;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.viewMore:hover{
+    color: white;
+}
+
+.viewMore::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: #C19A6B;
+    z-index: -1;
+    transition: .6s;
+    
+}
+
+.viewMore:hover::before{
+    width: 100%;
+}
+
+
+/* ============== New Arrival Banner =============  */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 35rem;
+  overflow: hidden;
+}
+
+.bannerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hide non-active slides */
+  transition: opacity 0.8s ease-in-out; /* Smooth fade-in effect */
+  z-index: 0;
+  display: none; /* Ensure non-active slides are not visible */
+}
+
+.bannerImage.active {
+  opacity: 1; /* Show the active slide */
+  z-index: 1;
+  display: block; /* Show active slide */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    transform: translateY(0) ;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%) translateY(-1000%);
+
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+}
+
+.banner-content{
+  padding-top: 10rem;
+  margin-left: 5rem;
+  z-index: 100;
+  position: absolute;
+  top: 10%;
+  
+
+}
+
+.bannerImage img{
+    object-fit: cover;
+    animation: fade-in 3s ease-in;
+    
+    
+}
+
+.banner-content .prod-name{
+    font-size: 1.5rem;
+    animation: slide-in 1000ms;
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
+}
+
+.banner-content .arrival{
+    font-size: 5rem;
+
+}
+
+.banner-content .time-div{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.banner-content .time-box{
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.2rem;
+    border: 2px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    color: #222222a6;
+    animation: slide-in 1000ms;
+  animation-delay: 2000ms;
+  animation-fill-mode: backwards;
+}
+
+.banner-content .time{
+    color: #618835;
+    animation: slide-up 1s ease-in-out
+}
+
+.banner-content .actual-pric{
+    font-size: 1.5rem;
+    opacity: .7;
+    margin-top: 3rem;
+    text-decoration: line-through;
+    animation: fade-in 1s ease-in-out
+}
+
+.banner-content .disc-pric{
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    color: #7e9c5c;
+    margin-left: 2rem;
+    animation: fade-in 2s ease-in-out
+}
+
+
+
+
+
+/* ===============  feactures   =============== */
+
+.feactures {
+    height: 14rem;
+    width: 100%;
+    border-top: 1px solid #2222228c;
+    border-bottom: 1px solid #2222228c;
+    margin: 4rem 0;
+    display: flex;
+    
+}
+
+.feactures .feacture-card{
+    display: flex;
+    margin-left: 3rem;
+    
+}
+
+.feactures .icon i{
+    font-size: 4rem;
+    color: #C19A6B;
+    margin-top: 4.5rem;
+}
+
+.feactures .feacture-card .feacture-content{
+    margin-left: 1rem;
+    margin-top: 3.5rem;
+}
+
+.feactures .feacture-card .feacture-content h5{
+    font-size: 1.3rem;
+}
+
+.feactures .feacture-card span{
+    height: 10rem;
+    width: .1rem;
+    color: #222;
+    background-color: #222;
+    opacity: .7;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    
+}
+
+@media (max-width:768px) {
+    .feactures {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        height: 22rem;
+        margin-top: 1rem;
+    }
+
+    .feactures .feacture-card span{
+        display: none;
+    }
+
+    .feactures .icon i{
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        
+    }
+
+    .feactures .feacture-card .feacture-content{
+        margin-top: 1rem !important;
+        font-size: 1rem;
+    }
+
+
+
+
+
+}
+
+
+/* ============  hero section  ============ */
+
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contactHero{
+    background: url("../banners-image/hero/contact-hero2.jpg") no-repeat center center/cover;
+
+  }
+
+
+  .BlogDetail-image{
+
+
+    background: url("../banners-image/hero/desk-office.jpg") no-repeat center center/cover;
+
+
+  }
+  
+  
+  .hero-overlay h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .hero-overlay .home-link {
+    text-decoration: none;
+    color: #f7f7f7;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .hero-overlay .home-link:hover{
+    color: #C19A6B;
+  }
+
+  .hero-link{
+    position: relative;
+  }
+
+  .hero-link li a::after {
+    content: '';
+    background-color: #C19A6B;
+    position: absolute;
+    bottom: -6px;
+    left: 35%;
+    opacity: 0;
+    height: 2px;
+    width: 5%;
+    transition: transform 0.3s ease;
+  }
+  
+  .hero-link li a:hover::after {
+    opacity: 1;
+    transform: translateY(-17px);
+} 
+
+
+
+.review-container {
+    background: #f0f0f0;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .review-item {
+    
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .review-item:last-child {
+    border-bottom: none;
+  }
+
+  .comment-leave-btn:hover{
+    color: #C19A6B;
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    justify-content: space-between;
+    
+
+  }
+
+  .review-item .largeImage {
+    width: 140px;
+    height: 140px;
+    /* border-radius: 50%; */
+    margin-right: 2px;
+    border: 3px solid #eee;
+    padding-right: 1rem;
+  }
+
+  .review-item .smallImage{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1px;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+
+  .review-header h3 {
+    margin: 1rem .5rem .5rem .5rem;
+    font-size: 20px;
+    color: #333;
+    
+  }
+
+
+
+  .review-date {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+  }
+
+  .review-comment {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6;
+    margin: 0 .5rem;
+  }
+
+
+
+  @media (max-width: 768px) {
+    .review-header {
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .review-header img {
+      margin: 0 auto 10px auto;
+    }
+
+    .review-stars
+     {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .review-date{
+      display: none;
+    }
+
+  }
+
+
+
+
+
+
+.product-review-box{
+    max-width: 90%;
+    margin: 20px auto;
+    background: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .review-box{
+    border-bottom: 1px dotted #4e4e4e63;
+    padding-bottom: 2rem;
+    
+}
+
+
+
+
+@media (max-width:450px) {
+    .comment-leave-box{
+        margin: 1rem !important;
+    }
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/* APIKey ========================== */
+
+.magnifier-wrapper {
+    display: flex; /* To place the magnifier side by side */
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .original-image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .original-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: crosshair;
+  }
+  
+  .magnified-view {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ccc;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+
+
+
+
+  /* ==================  brand Animation   ==================== */
+
+
+  @keyframes slides {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 30px 0px;
+    white-space: nowrap;
+    position: relative;
+    background-color: transparent;
+    margin-top: 3rem;
+  }
+  
+  .logos:before, .logos:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgb(255, 255, 255));
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgb(255, 255, 255));
+  }
+  
+  .logo_items {
+    display: inline-block;
+    animation: 25s slides infinite linear;
+    background-color: transparent;
+  }
+  
+  .logos:hover .logo_items {
+    animation-play-state: paused;
+  }
+  
+  .logo_items img{
+    height: 100px;
+    width: 100px;
+    margin-left: 3rem;
+  }
+  

@@ -1,0 +1,97 @@
+ [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "image": "/images/t-shirts/cloth1.png",
+      "src": "images/t-shirts/cloth1.png",
+      "price": 500,
+      "discountPrice": 350,
+      "category": "Clothing"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "image": "/images/t-shirts/cloth3.png",
+      "price": 800,
+      "discountPrice": 600,
+      "onSale":true,
+      "sale":23,
+      "category": "Clothing"
+
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "image": "/images/glases/glases1.png",
+      "price": 1200,
+      "discountPrice": 900,
+      "category": "Glases"
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "image": "/images/bags/bag1.png",
+      "price": 1500,
+      "discountPrice": 1200,
+      "category": "Bags"
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "image": "/images/bags/bag2.png",
+        "price": 1500,
+        "discountPrice": 1200,
+        "category": "Bags"
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "image": "/images/watches/watch1.jpg",
+        "price": 1500,
+        "discountPrice": 1200,
+        "onSale":true,
+        "sale":10, 
+        "category": "Watches"
+    },
+    {
+      "id": 7,
+      "name": "Product 7",
+      "image": "/images/watches/watch2.jpg",
+      "price": 1500,
+      "discountPrice": 1200,
+      "onSale":true,
+      "sale":12, 
+      "category": "Watches"
+    },
+    {
+      "id": 8,
+      "name": "Product 8",
+      "image": "/images/t-shirts/cloth2.png",
+      "price": 1500,
+      "discountPrice": 1200,
+      "onSale":true,
+      "sale":50, 
+      "category": "Clothing"
+    },
+    {
+      "id": 9,
+      "name": "Product 9",
+      "image": "/images/t-shirts/cloth4.png",
+      "price": 1500,
+      "discountPrice": 1200,
+      "onSale":true,
+      "sale":"30%", 
+      "category": "Clothing"
+    },
+    {
+      "id": 10,
+      "name": "Product 10",
+      "image": "/images/t-shirts/cloth5.png",
+      "price": 1500,
+      "discountPrice": 1200,
+      "onSale":true,
+      "sale":30, 
+      "category": "Clothing"
+    } 
+  ]
+  
