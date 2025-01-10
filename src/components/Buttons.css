@@ -287,6 +287,11 @@
     background: url("../banners-image/hero/faq-hero.jpg") no-repeat center center/cover;
 
   }
+
+  .addCart-background{
+    background: url("../banners-image/hero/addCart.jpg") no-repeat center center/cover;
+
+  }
   
   .hero-overlay h1 {
     font-size: 3em;
@@ -299,6 +304,7 @@
     color: #f7f7f7;
     border-radius: 5px;
     font-weight: bold;
+    list-style-type: none;
   }
 
   .hero-overlay .home-link:hover{
@@ -307,6 +313,7 @@
 
   .hero-link{
     position: relative;
+    list-style-type: none;
   }
 
   .hero-link li a::after {

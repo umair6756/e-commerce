@@ -59,10 +59,13 @@ body {
   #search-product,
   .product-select {
     padding: .5rem;
-
-    border-radius: 5px;
+    cursor: pointer;
+    /* border-radius: 5px; */
+    border-radius: 0;
     outline: none;
     width: 12rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
   }
 
   input[type="checkbox"] {
@@ -74,12 +77,6 @@ body {
 
 
 
-
-  #check-input{
-   
-    color: red;
-    display: block;
-  }
 
   
   /* .product-cards {

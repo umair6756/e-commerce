@@ -1,6 +1,7 @@
 
 import React, { useState, useRef } from "react";
 import "./FAQPage.css"
+import { HeroSection } from "./Buttons";
 
 const FAQPage = () => {
   const faqs = [
@@ -47,6 +48,8 @@ const FAQPage = () => {
   };
 
   return (
+    <>
+    
     <div className="faq-container">
       {/* FAQ Titles Section */}
       <div className="faq-sidebar">
@@ -78,6 +81,7 @@ const FAQPage = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

@@ -126,11 +126,11 @@ const ProductPage = () => {
                         placeholder="Search products..."
                         value={searchTerm}
                         onChange={handleSearch}
-                        className="border border-dark-subtle "
+                        className=""
                         id="search-product"
                     />
 
-                    <select value={sortedOption} onChange={handleSort} className="border border-dark-subtle product-select" >
+                    <select value={sortedOption} onChange={handleSort} className=" product-select" >
                         <option value="">Sort by</option>
                         <option value="low-price">Price: Low to High</option>
                         <option value="high-price" >Price: High to Low</option>
