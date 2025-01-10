@@ -278,7 +278,15 @@
 
 
   }
+
+  .aboutHero{
+    background: url("../banners-image/about/hero.jpg") no-repeat center center/cover;
+  }
   
+  .faqBackground{
+    background: url("../banners-image/hero/faq-hero.jpg") no-repeat center center/cover;
+
+  }
   
   .hero-overlay h1 {
     font-size: 3em;

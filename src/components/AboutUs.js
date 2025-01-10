@@ -1,19 +1,22 @@
 import React from "react";
 import "./AboutUs.css";
-import bannerImage from "../banners-image/blogs/blog1.jpg";
+import bannerImage from "../banners-image/about/hero.jpg";
 import aboutImage from '../banners-image/about/about2.jpg'
+import { HeroSection } from "./Buttons";
 
 const AboutUs = () => {
   return (
     <div className="about-us-advanced">
       {/* Hero Section */}
-      <div className="hero-section">
+      {/* <div className="hero-section">
         <img src={bannerImage} alt="About Us" className="hero-image" />
         <div className="hero-overlay">
           <h1>About Our Store</h1>
           <p>Where quality meets convenience</p>
         </div>
-      </div>
+      </div> */}
+
+      <HeroSection headingLabel="About Our Store" heroBackground="aboutHero"/>
 
       <div className="about-us">
 
