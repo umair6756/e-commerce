@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Buttons, { Button } from './Buttons'
+import Buttons, { Button, HeroSection } from './Buttons'
 import { CartContext } from './CartContext'
 import reviewsData from '../data/reviews.json'
 import { ReviewForm, Reviews, ReviewsForm } from './Reviews'
@@ -62,7 +62,8 @@ const ProductDetail = () => {
 
 
   return (
-    <div>
+    <div className='my-5 py-5'>
+      {/* <HeroSection heroBackground="product-detail-hero"/> */}
 
       <div className='LinkProduct border-bottom mx-5 my-3 py-3'>
         <Link to='/product' style={{ color: '#C19A6B' }} >Products</Link>
