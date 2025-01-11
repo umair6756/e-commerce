@@ -191,7 +191,7 @@ ul {
 
 .animationBox{
   transform: translateX(-400%);
-  transition: transform .4s ease;
+  transition: transform 1s ease;
 }
 
 .animationBox.show {

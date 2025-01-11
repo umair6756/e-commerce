@@ -1,8 +1,7 @@
 // src/OurTeam.js
 import React from "react";
 import './AboutUs.css';  // Import the CSS for advanced styling
-import image1 from '../banners-image/images.jpeg'
-
+import image1 from '../banners-image/hero/contact-hero2.jpg'
 const OurTeam = () => {
   const teamMembers = [
     { 

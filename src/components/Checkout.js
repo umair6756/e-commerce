@@ -1,13 +1,17 @@
 import React, { useContext } from 'react'
 import './Checkout.css'
 import { CartContext } from './CartContext'
+import { HeroSection } from './Buttons';
 
 
 const Checkout = () => {
 
     const { cart, calculateProductPrice } = useContext(CartContext);
     return (
+        <>
+        <HeroSection heroBackground="checkout-hero"/>
         <div className='checkout'>
+            
 
             <h2 className='text-center my-5'>Checkout Form</h2>
             {/* <div className='checkout-div'>
@@ -159,6 +163,8 @@ const Checkout = () => {
                 </div>
             </div> */}
 
+
+
             <main className='w-100'>
 
                 <section class="checkout-form">
@@ -273,6 +279,7 @@ const Checkout = () => {
 
 
         </div>
+        </>
     )
 }
 

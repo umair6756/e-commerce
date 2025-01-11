@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./Products.css";
 // import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
-import image1 from '../banners-image/images.jpeg'
+import image1 from '../banners-image/hero/blog-detail.jpg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faFacebookF, faInstagram, faLinkedin, faLinkedinIn, faTwitch, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faCalendar, faComment, faUser } from "@fortawesome/free-solid-svg-icons";

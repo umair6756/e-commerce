@@ -280,14 +280,16 @@
 
 import React, { useState, useEffect } from 'react';
 import './Carasole.css';
-import image1 from '../banners-image/banner1.jpg';
+import image1 from '../banners-image/banner5.jpg';
 import image2 from '../banners-image/banner2.jpg';
 import image3 from '../banners-image/banner3.jpg';
+import { Button } from './Buttons';
+
 
 const items = [
-  { image: image1, title: 'Title 1', description: 'Description 1' },
-  { image: image2, title: 'Title 2', description: 'Description 2' },
-  { image: image3, title: 'Title 3', description: 'Description 3' },
+  { image: image1, title: 'Biggest Discounts of the Year!', sale:"60%" ,description: 'Up to 70% Off on All Categories!'},
+  { image: image2, title: 'Boult Audio AirBass FX1', description: 'Stylish earbuds with deep bass and sweat resistance.' },
+  { image: image3, title: 'Your Perfect Timepiece is Here', description: 'Explore Our Exclusive Collection of Premium Watches' },
 ];
 
 const Carasole = () => {
@@ -297,7 +299,7 @@ const Carasole = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [items.length]);
 
@@ -320,10 +322,15 @@ const Carasole = () => {
             <img src={item.image} alt={item.title} className="carousel-image" />
             <div className="carousel-text">
               <h2>{item.title}</h2>
+              {/* <h1>{item.sale}</h1> */}
               <p>{item.description}</p>
+              <div className='shop-button'><Button label="Shop Now"></Button></div>
+              
             </div>
+            
           </div>
         ))}
+        
       </div>
       <button className="carousel-button prev" onClick={handlePrev}>
         ❮

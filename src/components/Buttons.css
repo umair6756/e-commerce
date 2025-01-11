@@ -292,6 +292,11 @@
     background: url("../banners-image/hero/addCart.jpg") no-repeat center center/cover;
 
   }
+
+  .checkout-hero{
+    background: url("../banners-image/hero/checkout.jpg") no-repeat center center/cover;
+
+  }
   
   .hero-overlay h1 {
     font-size: 3em;
