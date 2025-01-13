@@ -7,29 +7,12 @@ import { useState } from 'react'
 
 const AddToCart = () => {
 
-  const { cart, removeFromCart, totalPrice,shipping,setShipping,calculateProductPrice,setCart,increament,decreament,count} = useContext(CartContext);
+  const { cart, removeFromCart,calculateProductPrice,setCart,increament,decreament,count} = useContext(CartContext);
  
 
   const handleRemove = (index) => {
     removeFromCart(index)
   }
-
-  // const decreament = (index) => {
-  //    const updateCart = [...cart];
-  //    if(updateCart[index].quantity>1){
-  //     updateCart[index].quantity -=1;
-  //    }
-
-  //    setCart(updateCart)
-  // };
-  // const increament = (index) => {
-  //   const updateCart = [...cart];
-  //   if(updateCart[index].quantity>1){
-  //     updateCart[index].quantity += 1;
-  //   }
-
-  //   setCart(updateCart)
-  // }
 
   return (
     <div>
@@ -63,11 +46,11 @@ const AddToCart = () => {
                     <div className="row">{item.name}</div>
                   </div>
                   <div className="col">
-                    <button onClick={decreament}>-</button>
+                    <button onClick={() => decreament(index)}>-</button>
                     <span className="border">
-                        {count}
+                        {item.quantity || 1}
                     </span>
-                    <button onClick={increament}>+</button>
+                    <button onClick={() => increament(index)}>+</button>
                   </div>
 
                   <div className="col">
@@ -109,12 +92,11 @@ const AddToCart = () => {
             </div>
             <form>
               <p>SHIPPING</p>
-              <select className='delivery-select' value={shipping} onChange={(e) => setShipping(e.target.value)}>
-                <option className="text-muted " value="free"> Free-Delivery</option>
-                <option className="text-muted" value="standard">Standard-Delivery(200) </option>
-                <option className="text-muted" value="express">Standard-Delivery (300)</option>
+              
+                <p className='cuppon-input' > Free-Delivery</p>
 
-              </select>
+
+              
               <p>GIVE CODE</p>
               <input id="code" placeholder="Enter your code" className='cuppon-input' />
             </form>
@@ -123,7 +105,7 @@ const AddToCart = () => {
               style={{ borderTop: "1px solid rgba(0,0,0,.1)", padding: "2vh 0" }}
             >
               <div className="col">TOTAL PRICE</div>
-              <div className="col text-right">{totalPrice(shipping)}</div>
+              <div className="col text-right">{calculateProductPrice()}</div>
             </div>
             <Link to='/checkout' className="checkBtn">CHECKOUT</Link>
           </div>

@@ -5,9 +5,7 @@ import image1 from '../banners-image/hero/blog-detail.jpg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faFacebookF, faInstagram, faLinkedin, faLinkedinIn, faTwitch, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faCalendar, faComment, faUser } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { CartContext } from "./CartContext";
-import { Reviews, ReviewsForm } from "./Reviews";
+
 import { HeroSection } from "./Buttons";
 import { useParams } from "react-router-dom";
 import blogData from '../data/blogs-data.json';

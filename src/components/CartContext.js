@@ -9,20 +9,35 @@ export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
     const [wishlest, setWishlest] = useState([])
-    const [shipping, setShipping] = useState('free')
     const [count, setCount] = useState(1);
 
-    const addToCart = (product) =>{
-        setCart((prevCart) => [...prevCart, product]);
-        toast.success("Product added successfully 🧡 ", {
-          position: "top-right",
-          autoClose: 3000,  
-          theme: "colored",  
+    // const addToCart = (product) =>{
+    //     setCart((prevCart) => [...prevCart, product]);
+    //     toast.success("Product added successfully 🧡 ", {
+    //       position: "top-right",
+    //       autoClose: 3000,  
+    //       theme: "colored",  
             
            
-        });
+    //     });
 
-    }
+    // }
+
+
+    const addToCart = (product) => {
+      setCart((prevCart) => {
+        const exists = prevCart.find((item) => item.id === product.id);
+        if (exists) {
+          return prevCart.map((item) =>
+            item.id === product.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          );
+        } else {
+          return [...prevCart, { ...product, quantity: 1 }];
+        }
+      });
+    };
 
 
     const addToWish = (product) =>{
@@ -66,40 +81,39 @@ export const CartProvider = ({children}) => {
           : product.price;
         
     
-        return total + productPrice * count;
+        return total + productPrice * (product.quantity || 1);
       }, 0).toFixed(2); 
     }
 
 
 
-
-    const totalPrice = (shipping) => {
-      const productPrice = calculateProductPrice();
-      
-      if(shipping === 'free'){
-        return productPrice;
-      }else if(shipping === 'standard'){
-        return productPrice+200;
-      }else if(shipping === 'express'){
-        return productPrice+300;
-      }
-      
-      
-      return productPrice;
-      
-    }
-
-
     
 
 
-    const decreament = () => {
-      if (count > 1) {
-        setCount(prevCount => prevCount - 1)
-      }
-    };
-    const increament = () => setCount(prevCount => prevCount + 1);
 
+    const increament = (index) => {
+      setCart((prevCart) => {
+        return prevCart.map((item, idx) => {
+          if (idx === index) {
+            return { ...item, quantity: (item.quantity || 1) + 1 }; // Default to 1 if no quantity
+          }
+          return item;
+        });
+      });
+    };
+
+    const decreament = (index) => {
+      setCart((prevCart) => {
+        return prevCart.map((item, idx) => {
+          if (idx === index && item.quantity > 1) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        });
+      });
+    };
+    
+    
 
     // ============   scroll Animation ==========
 
@@ -139,7 +153,7 @@ export const CartProvider = ({children}) => {
     
 
   return (
-    <CartContext.Provider value={{cart,setCart, wishlest,addToCart, removeFromCart,addToWish,removeFromWishlest, totalPrice, calculateProductPrice,shipping,setShipping,increament,decreament,count,setCount,useScrollAnimation}}>
+    <CartContext.Provider value={{cart,setCart, wishlest,addToCart, removeFromCart,addToWish,removeFromWishlest, calculateProductPrice,increament,decreament,count,setCount,useScrollAnimation}}>
         {children}
         <ToastContainer />
     </CartContext.Provider>

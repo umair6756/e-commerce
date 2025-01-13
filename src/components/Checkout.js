@@ -6,7 +6,7 @@ import { HeroSection } from './Buttons';
 
 const Checkout = () => {
 
-    const { cart, calculateProductPrice } = useContext(CartContext);
+    const { cart, calculateProductPrice, increament, decreament } = useContext(CartContext);
     return (
         <>
         <HeroSection heroBackground="checkout-hero"/>
@@ -21,7 +21,7 @@ const Checkout = () => {
                         <h6>Contact information</h6>
                         <div class="form-control " style={{border:"none"}}>
                             <label for="checkout-email">E-mail</label>
-                            <div>
+                            <div >
                                 <span class="fa fa-envelope"></span>
                                 <input type="email" id="checkout-email" name="checkout-email" placeholder="Enter your email..." />
                             </div>
@@ -106,9 +106,9 @@ const Checkout = () => {
                                 ): prod.price}
                                 </div>
                                     <div class="card-wheel">
-                                        <button>-</button>
-                                        <span>1</span>
-                                        <button>+</button>
+                                        <button onClick={() => decreament(index)}>-</button>
+                                        <span>{prod.quantity}</span>
+                                        <button onClick={() => increament(index)}>+</button>
                                     </div>
                                 </div>
                             </div>

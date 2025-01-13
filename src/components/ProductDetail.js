@@ -47,13 +47,13 @@ const ProductDetail = () => {
 
   // product review 
 
-  
+
 
 
 
   const [reviews, setReviews] = useState(reviewsData)
 
-  
+
 
 
 
@@ -114,38 +114,41 @@ const ProductDetail = () => {
 
           </p>
           <div className='price-quantity d-flex gap-5'>
-            <div className='quantity-div'>
-              <p className='quantity-heading text-uppercase fw-bold' style={{ color: '#333', opacity: '.7' }}>Quantity</p>
-              <button className='border border-0 bg-transparent'><span className='decreament fs-4' onClick={decreament}>-</span></button>
-              <span className='result mx-4 fs-6'>{count}</span>
-              <button className='border border-0 bg-transparent'><span className='increament fs-5' onClick={increament}>+</span></button>
 
+
+            <div className='d-flex flex-row gap-5'>
+              <p className='quantity-heading text-uppercase fw-bold' style={{ color: '#333', opacity: '.7'}}>price</p>
+              <div>
+                {product.onSale ? (
+                  <>
+                    <span style={{ color: "#C19A6B", fontWeight: "600", marginLeft:'3rem' }}>{product.price - (product.price * product.sale / 100).toFixed(2)}</span>
+                    <span className='mx-2' style={{ color: "#888", textDecoration: "line-through", fontWeight: "400" }}>{product.price}</span>
+                  </>
+                ) : product.price}
+              </div>
             </div>
 
-            <div className='price-div'>
-              <p className='quantity-heading text-uppercase fw-bold' style={{ color: '#333', opacity: '.7' }}>price</p>
-              <span className='price'>{total}</span>
-            </div>
+            
 
           </div>
           <div className='d-flex flex-row '>
-            <div className='Buttons ' onClick={() => { addToCart(product); }}>{<Button label="Add to Cart"/>}</div>
-            <div className='Buttons mx-5 my-0'  ><Link to="/checkout" style={{ margin: "0", padding: "0" }}>{<Button label="BUY Now"/>}</Link></div>
+            <div className='Buttons ' onClick={() => { addToCart(product); }}>{<Button label="Add to Cart" />}</div>
+            <div className='Buttons mx-5 my-0'  ><Link to="/checkout" style={{ margin: "0", padding: "0" }}>{<Button label="BUY Now" />}</Link></div>
           </div>
         </div>
       </div>
 
 
-     <Reviews label="Reviews" leaveBtn="Leave Reviews" showRating={true} imageSize="largeImage"  />
-     
-     
+      <Reviews label="Reviews" leaveBtn="Leave Reviews" showRating={true} imageSize="largeImage" />
+
+
 
 
       {/* comment form  */}
 
 
 
-  
+
     </div>
   )
 }
