@@ -24,6 +24,7 @@ export const CartProvider = ({children}) => {
 
     }
 
+
     const addToWish = (product) =>{
       setWishlest((prevWish) => [...prevWish, product]);
       toast.success("Product added successfully 🧡 ", {
@@ -59,8 +60,18 @@ export const CartProvider = ({children}) => {
     }
 
     const calculateProductPrice = () => {
-      return cart.reduce((total, product) => total + product.price, 0);
+      return cart.reduce((total, product) => {
+        const productPrice = product.onSale
+          ? product.price - (product.price * product.sale) / 100
+          : product.price;
+        
+    
+        return total + productPrice * count;
+      }, 0).toFixed(2); 
     }
+
+
+
 
     const totalPrice = (shipping) => {
       const productPrice = calculateProductPrice();

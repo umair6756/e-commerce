@@ -82,7 +82,7 @@ function App() {
             <Route path="/contact" element={<Contact/>} ></Route>
             <Route path="/Faq" element={<FAQ/>}></Route>
             <Route path="/product" element={<Product/>}></Route>
-            <Route path="/product/:id" element={<ProductDetailPage/>}></Route>
+            <Route path="/product" element={<ProductDetailPage/>}></Route>
             <Route path="/cart" element={<AddToCartPage/>}></Route>
             <Route path="/product/:id" element={<ProductDetailPage/>}></Route>
             <Route path="/wishlest" element={<WishlestPage/>}></Route>

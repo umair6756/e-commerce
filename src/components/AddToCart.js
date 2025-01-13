@@ -7,29 +7,29 @@ import { useState } from 'react'
 
 const AddToCart = () => {
 
-  const { cart, removeFromCart, totalPrice,shipping,setShipping,calculateProductPrice,setCart} = useContext(CartContext);
+  const { cart, removeFromCart, totalPrice,shipping,setShipping,calculateProductPrice,setCart,increament,decreament,count} = useContext(CartContext);
  
 
   const handleRemove = (index) => {
     removeFromCart(index)
   }
 
-  const decreament = (index) => {
-     const updateCart = [...cart];
-     if(updateCart[index].quantity>1){
-      updateCart[index].quantity -=1;
-     }
+  // const decreament = (index) => {
+  //    const updateCart = [...cart];
+  //    if(updateCart[index].quantity>1){
+  //     updateCart[index].quantity -=1;
+  //    }
 
-     setCart(updateCart)
-  };
-  const increament = (index) => {
-    const updateCart = [...cart];
-    if(updateCart[index].quantity>1){
-      updateCart[index].quantity += 1;
-    }
+  //    setCart(updateCart)
+  // };
+  // const increament = (index) => {
+  //   const updateCart = [...cart];
+  //   if(updateCart[index].quantity>1){
+  //     updateCart[index].quantity += 1;
+  //   }
 
-    setCart(updateCart)
-  }
+  //   setCart(updateCart)
+  // }
 
   return (
     <div>
@@ -63,15 +63,19 @@ const AddToCart = () => {
                     <div className="row">{item.name}</div>
                   </div>
                   <div className="col">
-                    <button onClick={() => decreament(index)}>-</button>
+                    <button onClick={decreament}>-</button>
                     <span className="border">
-                        {item.quantity || 1}
+                        {count}
                     </span>
-                    <button onClick={() => increament(index)}>+</button>
+                    <button onClick={increament}>+</button>
                   </div>
 
                   <div className="col">
-                    <span>{item.price}</span>
+                  {item.onSale ? (
+                                      
+                                      <span>{item.price - (item.price * item.sale / 100).toFixed(2)}</span>
+                                      
+                                ): item.price}
 
                   </div>
                   <div className='col'>
