@@ -24,6 +24,17 @@ export const CartProvider = ({children}) => {
     // }
 
 
+    const [searchTerm, setSearchTerm] = useState("");
+    const handleSearch = (e) => {
+       setSearchTerm(e.target.value);
+    }
+
+
+
+
+
+
+
     const addToCart = (product) => {
       setCart((prevCart) => {
         const exists = prevCart.find((item) => item.id === product.id);
@@ -153,7 +164,7 @@ export const CartProvider = ({children}) => {
     
 
   return (
-    <CartContext.Provider value={{cart,setCart, wishlest,addToCart, removeFromCart,addToWish,removeFromWishlest, calculateProductPrice,increament,decreament,count,setCount,useScrollAnimation}}>
+    <CartContext.Provider value={{searchTerm,handleSearch,cart,setCart, wishlest,addToCart, removeFromCart,addToWish,removeFromWishlest, calculateProductPrice,increament,decreament,count,setCount,useScrollAnimation}}>
         {children}
         <ToastContainer />
     </CartContext.Provider>

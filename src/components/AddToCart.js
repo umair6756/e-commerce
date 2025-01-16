@@ -41,24 +41,24 @@ const AddToCart = () => {
 
 
                   </div>
-                  <div className="col">
+                  <div className="col small-screen">
                     <div className="row text-muted">{item.category}</div>
                     <div className="row">{item.name}</div>
                   </div>
-                  <div className="col">
-                    <button onClick={() => decreament(index)}>-</button>
-                    <span className="border">
+                  <div className="col ">
+                    <button className='quantity-btn mx-2' onClick={() => decreament(index)}>-</button>
+                    <span className="quantity-btn">
                         {item.quantity || 1}
                     </span>
-                    <button onClick={() => increament(index)}>+</button>
+                    <button className='quantity-btn mx-2' onClick={() => increament(index)}>+</button>
                   </div>
 
                   <div className="col">
                   {item.onSale ? (
                                       
-                                      <span>{item.price - (item.price * item.sale / 100).toFixed(2)}</span>
+                                      <span>{(item.price - (item.price * item.sale / 100))*(item.quantity).toFixed(2)}</span>
                                       
-                                ): item.price}
+                                ): item.price * item.quantity}
 
                   </div>
                   <div className='col'>

@@ -100,10 +100,9 @@ const Checkout = () => {
                                     <div class="card-name">{prod.name}</div>
                                     <div class="card-price">                                {prod.onSale ? (
                                        <>
-                                      <span>{prod.price - (prod.price * prod.sale / 100).toFixed(2)}</span>
-                                      <span className='mx-1' style={{color: "#888", textDecoration:"line-through", fontWeight: "400"}}>{prod.price}</span>
+                                      <span>{(prod.price - (prod.price * prod.sale / 100))* (prod.quantity).toFixed(2)}</span>
                                       </>
-                                ): prod.price}
+                                ): prod.price * prod.quantity}
                                 </div>
                                     <div class="card-wheel">
                                         <button onClick={() => decreament(index)}>-</button>

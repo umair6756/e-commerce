@@ -43,7 +43,11 @@ const Wishlest = () => {
                   </div>
                 </td>
                 <td width="15%" className="price">
-                  {items.discountPrice}
+                {items.onSale ? (
+                                      
+                                      <span>{items.price - (items.price * items.sale / 100)}</span>
+                                      
+                                ): items.price}
                 </td>
                 <td width="15%" className='inStock-td'>
                   <span className="in-stock-box">In Stock</span>

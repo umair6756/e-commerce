@@ -48,6 +48,10 @@
     .img-fluid{
         display: none !important;
     }
+
+    .col-2{
+        display: none;
+    }
 }
 .summary .col-2{
     padding: 0;
@@ -68,6 +72,11 @@
 }
 .col-2, .col{
     padding: 0 1vh;
+}
+.col .quantity-btn{
+    border: none;
+    outline: none;
+    background: transparent;
 }
 a{
     padding: 0 1vh;

@@ -75,7 +75,7 @@ const ProductPage = () => {
 
 
     return (
-        <div className="product-page my-5">
+        <div className="product-page py-5">
             {/* Sidebar */}
             <div className="sidebar">
                 <h3>Categories</h3>

@@ -331,22 +331,7 @@
     list-style-type: none;
   }
 
-  .hero-link li a::after {
-    content: '';
-    background-color: #C19A6B;
-    position: absolute;
-    bottom: -6px;
-    left: -30%;
-    opacity: 0;
-    height: 3px;
-    width: 30%;
-    transition: transform 0.3s ease;
-  }
-  
-  .hero-link li a:hover::after {
-    opacity: 1;
-    transform: translateY(-17px);
-} 
+
 
 
 /* =========   review   =============== */
