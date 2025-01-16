@@ -1,85 +1,67 @@
-import React from 'react';
-import image from '../banners-image/arrival.jpg';
-import './Buttons.css'
-import { useState, useEffect } from 'react';
-
-let arrivalData = [
-    {
-    "src": image,
-    "name": "News and Inspiration",
-    "days": 10,
-    "hours": 24,
-    "minutes": 500,
-    "actualPrice": '$1200',
-    "discountPrice":'$800'
-
-},
-{
-    "src": image,
-    "name": "News and Inspiration",
-    "days": 103,
-    "hours": 243,
-    "minutes": 5200,
-    "actualPrice": '$1200',
-    "discountPrice":'$800'
-
-},
-{
-    "src": image,
-    "name": "News and Inspiration",
-    "days": 0,
-    "hours": 4,
-    "minutes": 50,
-    "actualPrice": '$1200',
-    "discountPrice":'$800'
-
-}
-]
-
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import './Buttons.css'; // Import your CSS for advanced styles
+import image from '../banners-image/banner2.jpg'
 
 const NewArrival = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(3600); // Countdown starting from 1 hour (3600 seconds)
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % arrivalData.length);
-      }, 5000);
-      return () => clearInterval(interval);
-    }, []);
-  
-    // const handlePrev = () => {
-    //   setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
-    // };
-  
-    // const handleNext = () => {
-    //   setCurrentIndex((prevIndex) => (prevIndex + 1) % date.length);
-    // };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (timeLeft > 0) {
+        setTimeLeft(timeLeft - 1);
+      } else {
+        setTimeLeft(3600); // Reset countdown to 1 hour
+      }
+    }, 1000); // Update countdown every second
+    return () => clearInterval(interval);
+  }, [timeLeft]);
 
-    return (
-        <div>
-            <div className='banner'>
-            
-                {arrivalData.map((data, index) => (
-                <div key={index} className={`bannerImage ${index === currentIndex ? "active" : ""}`}>
-                    <img src={data.src} style={{ width: '100%', height: '35rem'  }} className='mb-5' alt='hello'></img>
-                    <div className='banner-content'>
-                        <h3 className='prod-name'>{data.name}</h3>
-                        
-                        <div className='time-div'>
-                            <p className='time-box'><span className='time'>{data.days}</span>days</p>
-                            <p className='time-box'><span className='time'>{data.hours}</span>Hours</p>
-                            <p className='time-box'><span className='time'>{data.minutes}</span>mins</p>
-                        </div>
-                        <span className='actual-pric'>{data.actualPrice}</span>
-                        <span className='disc-pric'>{data.discountPrice}</span>
+  const hours = Math.floor(timeLeft / 3600);
+  const minutes = Math.floor((timeLeft % 3600) / 60);
+  const seconds = timeLeft % 60;
 
-                    </div>
-                </div>
-                ))}
-
+  return (
+    <div className="banner-container">
+      <Container>
+        <Row className="justify-content-center align-items-center">
+          <Col lg={6} md={12} className="text-center text-light">
+            <h1 className="banner-title">Limited Time Offer</h1>
+            <div className="countdown-boxes">
+              <div className="countdown-box">
+                <div className="time-box">{hours < 10 ? `0${hours}` : hours}</div>
+                <div className="time-label">Hours</div>
+              </div>
+              <div className="countdown-box">
+                <div className="time-box">{minutes < 10 ? `0${minutes}` : minutes}</div>
+                <div className="time-label">Minutes</div>
+              </div>
+              <div className="countdown-box">
+                <div className="time-box">{seconds < 10 ? `0${seconds}` : seconds}</div>
+                <div className="time-label">Seconds</div>
+              </div>
             </div>
-        </div>
-    )
-}
+            <Button variant="primary" className="banner-button">
+              Shop Now
+            </Button>
+          </Col>
+          <Col lg={6} md={12} className="text-center">
+            <img
+              src={image} // Replace with your image URL
+              alt="Banner"
+              className="banner-image"
+            />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+};
+
+
+
+
+
+
 
 export default NewArrival

@@ -46,137 +46,149 @@
 
 /* ============== New Arrival Banner =============  */
 
-.banner {
-  position: relative;
+/* General Container Styling */
+.banner-container {
+  background: linear-gradient(135deg, #C19A6B, #D1A77C, #C19A6B);
+
+
+
+
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: infiniteMove 3s ease-in-out infinite;
+}
+
+/* @keyframes infiniteMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
+
+/* Header Styling */
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Countdown Styling */
+.countdown-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: pulseBox 1.5s infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.countdown-box:hover {
+  transform: scale(1.1);
+}
+
+.time-box {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.time-label {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Pulsing Effect for Countdown Boxes */
+/* @keyframes pulseBox {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+/* Button Styling */
+.banner-button {
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.banner-button:hover {
+  background: #ff5733;
+  transform: scale(1.1);
+}
+
+/* Image Styling */
+.banner-image {
   width: 100%;
-  height: 35rem;
-  overflow: hidden;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.bannerImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* Hide non-active slides */
-  transition: opacity 0.8s ease-in-out; /* Smooth fade-in effect */
-  z-index: 0;
-  display: none; /* Ensure non-active slides are not visible */
+.banner-image:hover {
+  transform: scale(1.05);
 }
 
-.bannerImage.active {
-  opacity: 1; /* Show the active slide */
-  z-index: 1;
-  display: block; /* Show active slide */
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: .5;
-  }
-}
-
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    transform: translateY(0) ;
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%) translateY(-1000%);
-
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%) translateY(0%);
-    opacity: 1;
-  }
-}
-
-.banner-content{
-  padding-top: 10rem;
-  margin-left: 5rem;
-  z-index: 100;
-  position: absolute;
-  top: 10%;
-  
-
-}
-
-.bannerImage img{
-    object-fit: cover;
-    animation: fade-in 3s ease-in;
-    
-    
-}
-
-.banner-content .prod-name{
-    font-size: 1.5rem;
-    animation: slide-in 1000ms;
-  animation-delay: 1000ms;
-  animation-fill-mode: backwards;
-}
-
-.banner-content .arrival{
-    font-size: 5rem;
-
-}
-
-.banner-content .time-div{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.banner-content .time-box{
-    height: 4rem;
-    width: 4rem;
-    font-size: 1.2rem;
-    border: 2px solid #222;
-    display: flex;
+/* Responsive Layout */
+@media (max-width: 767px) {
+  .countdown-boxes {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3rem;
-    color: #222222a6;
-    animation: slide-in 1000ms;
-  animation-delay: 2000ms;
-  animation-fill-mode: backwards;
+    gap: 10px;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .countdown-box {
+    padding: 15px;
+  }
+
+  .time-box {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+
+  .banner-button {
+    padding: 10px 20px;
+  }
+
+  .banner-image {
+    max-width: 100%;
+    margin-top: 20px;
+  }
 }
-
-.banner-content .time{
-    color: #618835;
-    animation: slide-up 1s ease-in-out
-}
-
-.banner-content .actual-pric{
-    font-size: 1.5rem;
-    opacity: .7;
-    margin-top: 3rem;
-    text-decoration: line-through;
-    animation: fade-in 1s ease-in-out
-}
-
-.banner-content .disc-pric{
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    color: #7e9c5c;
-    margin-left: 2rem;
-    animation: fade-in 2s ease-in-out
-}
-
-
 
 
 

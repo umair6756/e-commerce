@@ -1,15 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState,useRef } from 'react';
 import './Navbar.css'; // Import the CSS for the navbar
 import { Link, Links } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCartShopping, faChevronDown, faHeart, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'; 
+import { faBars, faCartShopping, faChevronDown, faHeart, faSearch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons'; 
 import { CartContext } from './CartContext';
 
 const Navbar = () => {
   // const [isMenuOpen, setIsMenuOpen] = useState(false); // Manage the state of the menu
-  // const [isDropdown, setIsDropdown] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
   const [scrolled, setScrolled] = useState(false)
 
+
+  const searchRef = useRef(null);
+
+
+
+  const toggleSearch = () => {
+    setIsSearch(!isSearch)
+  }
   useEffect(() => {
     const handleScrolle = () => {
       if(window.scrollY>80){
@@ -40,6 +48,22 @@ const Navbar = () => {
   // }
 
   // const { cart } = useContext(CartContext);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setIsSearch(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
+
 
   return (
     <>
@@ -90,7 +114,7 @@ const Navbar = () => {
 <div className="navBar" id="navBar">
   <div className={`wrapper ${scrolled ? "scrolled":""}`}>
     <nav>
-      <input type="checkbox" id="show-search" />
+      {/* <input type="checkbox" id="show-search" /> */}
       <input type="checkbox" id="show-menu" />
       <label htmlFor="show-menu" className="menu-icon">
         <FontAwesomeIcon icon={faBars}/>
@@ -138,19 +162,14 @@ const Navbar = () => {
         </ul>
         </div>
       </div>
+
+      <div className='addToCart-search d-flex gap-3'>
       
-      <div className="addToCart">
-        <p>
-          <a href="#">H</a>
-        </p>
-        <p>
-          <a href="#">H</a>
-        </p>
-      </div>
-      <label htmlFor="show-search" className="search-icon">
-        <FontAwesomeIcon icon={faSearch}/>
+
+      <label htmlFor="show-search" className='search-icon'  onClick={toggleSearch}>
+        <FontAwesomeIcon icon={isSearch ? faTimes : faSearch}/>
       </label>
-      <form action="#" className="search-box">
+      <form action="#" className={`search-box ${isSearch ? 'active':''}` }>
         <input
           type="text"
           placeholder="Type Something to Search..."
@@ -162,6 +181,15 @@ const Navbar = () => {
           q
         </button>
       </form>
+      <div className="addToCart d-flex my-0 py-0 gap-4">
+        <p>
+          <a href="#"><FontAwesomeIcon icon={faCartShopping}/></a>
+        </p>
+        <p>
+          <a href="#"><FontAwesomeIcon icon={faUser}/></a>
+        </p>
+      </div>
+      </div>
     </nav>
   </div>
 </div>
