@@ -38,6 +38,9 @@ import BlogDetail from "./components/BlogDetail";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import Login from "./components/Login";
 import LoginPage from "./pages/LoginPage";
+import BlogPage from "./pages/BlogPage";
+import Sidebar from "./dashboard/component/Sidebar";
+import DashHome from "./dashboard/pages/DashHome";
 
 
 
@@ -87,9 +90,13 @@ function App() {
             <Route path="/product/:id" element={<ProductDetailPage/>}></Route>
             <Route path="/wishlest" element={<WishlestPage/>}></Route>
             <Route path="/checkout" element={<CheckoutPage/>}></Route>
-            <Route path="/blog" element={<Blog/>}></Route>
+            <Route path="/blog" element={<BlogPage/>}></Route>
             <Route path="/blog/:id" element={<BlogDetailPage/>}></Route>
             <Route path="/login" element={<LoginPage/>}></Route>
+            <Route path="/sidebar" element={<Sidebar/>}></Route>
+            <Route path="/admin" element={<DashHome/>}></Route>
+
+            
 
             
 

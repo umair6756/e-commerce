@@ -318,6 +318,10 @@
     background: url("../banners-image/hero/contact-img.jpg") no-repeat center center/cover;
 
   }
+
+  .blog-hero{
+    background: url("../banners-image/hero/blog-hero.jpg") no-repeat center center/cover;
+  }
   
   .hero-overlay h1 {
     font-size: 3em;

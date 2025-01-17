@@ -13,6 +13,16 @@ const Products = () => {
 
     useScrollAnimation()
 
+    const {searchTerm} = useContext(CartContext)
+
+    const filteredProducts = firstSixProducts.filter((product) =>{
+        const matchesSearch = product.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+        
+        return matchesSearch
+    })
+
 
     return (
         <div className='product-container'>
@@ -23,7 +33,7 @@ const Products = () => {
 
             <div className="product-grid">
 
-                {firstSixProducts.map(product => (
+                {filteredProducts.map(product => (
                     <div key={product.id} className='product-card animationBox'>
                         <div className="product-image">
                             <Link to={`/product/${product.id}`} className="image">

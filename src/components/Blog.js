@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Products.css'
 
 
 import blogData from '../data/blogs-data.json'
 import { Link } from 'react-router-dom';
+import { CartContext } from './CartContext';
 const Blog = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+    // const [searchTerm, setSearchTerm] = useState("");
+    const {searchTerm, setSearchTerm} = useContext(CartContext)
     const handleSearch = (e) => {
        setSearchTerm(e.target.value);
     }
@@ -18,6 +20,7 @@ const Blog = () => {
 })
 
     return (
+
         <div className='blogPage d-flex flex-row ' style={{ background: '#f0f0f0' }}>
             <div className='blogPage-cards gap-3 d-flex flex-wrap  my-5  '>
                 {filteredBlogs.map(blog => (

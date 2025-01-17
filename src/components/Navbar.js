@@ -37,7 +37,11 @@ const Navbar = () => {
 
   }, [])
 
-  const {handleSearch,searchTerm} = useContext(CartContext)
+  const {searchTerm,setSearchTerm ,cart} = useContext(CartContext)
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+ }
   // // Toggle menu state on burger button click
   // const toggleMenu = () => {
   //   setIsMenuOpen(!isMenuOpen);
@@ -150,6 +154,10 @@ const Navbar = () => {
               <Link to='/cart'>About Us</Link>
               </li>
               <li><Link to='/wishlest'>Wistlest</Link></li>
+              <li><Link to='/sidebar'>Sidebar</Link></li>
+              <li><Link to='/admin'>Dashboard</Link></li>
+
+
             </ul>
           </li>
           <li>
@@ -183,10 +191,10 @@ const Navbar = () => {
       </form>
       <div className="addToCart d-flex my-0 py-0 gap-4">
         <p>
-          <a href="#"><FontAwesomeIcon icon={faCartShopping}/></a>
+          <Link to='/cart'><FontAwesomeIcon icon={faCartShopping}/> {cart.length > 0 ? <span>{cart.length}</span> : "" }</Link>
         </p>
         <p>
-          <a href="#"><FontAwesomeIcon icon={faUser}/></a>
+          <Link to="/login"><FontAwesomeIcon icon={faUser}/></Link>
         </p>
       </div>
       </div>

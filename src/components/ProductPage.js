@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./ProductPage.css";
 import './Products.css'
 import products from "../data/products-data.json";
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 const ProductPage = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+    // const [searchTerm, setSearchTerm] = useState("");
+
+    const {searchTerm, addToCart, addToWish} = useContext(CartContext)
       
   
     const [sortedOption, setSortedOption] = useState("")
@@ -29,9 +32,7 @@ const ProductPage = () => {
     //     // Add more products
     //   ];
 
-    const handleSearch = (e) => {
-        setSearchTerm(e.target.value);
-    };
+
 
     const handleCategoryChange = (e) => {
         setCategories({ ...categories, [e.target.name]: e.target.checked });
@@ -121,14 +122,7 @@ const ProductPage = () => {
                     <div className="product-count">
                         Showing <span className="product-length">{filteredProducts.length}</span> of <span className="product-length">{products.length}</span> Products
                     </div>
-                    <input
-                        type="text"
-                        placeholder="Search products..."
-                        value={searchTerm}
-                        onChange={handleSearch}
-                        className=""
-                        id="search-product"
-                    />
+
 
                     <select value={sortedOption} onChange={handleSort} className=" product-select" >
                         <option value="">Sort by</option>
@@ -156,7 +150,7 @@ const ProductPage = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="#" onClick={() => {addToWish(product);}}>
                                             <i className="fa fa-heart" />
                                         </a>
                                     </li>
@@ -166,9 +160,9 @@ const ProductPage = () => {
                                         </a>
                                     </li>
                                 </ul>
-                                <a href="" className="add-to-cart">
+                                <button className="add-to-cart" onClick={() => {addToCart(product);}}>
                                     Add to Cart
-                                </a>
+                                </button>
                             </div>
                             <div className="product-content">
                                 <h3 className="title">
