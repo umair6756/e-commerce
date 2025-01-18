@@ -41,6 +41,8 @@ import LoginPage from "./pages/LoginPage";
 import BlogPage from "./pages/BlogPage";
 import Sidebar from "./dashboard/component/Sidebar";
 import DashHome from "./dashboard/pages/DashHome";
+import ViewProducts from "./dashboard/component/ViewProducts";
+import ProductForm from "./dashboard/component/ProductForm";
 
 
 
@@ -95,6 +97,9 @@ function App() {
             <Route path="/login" element={<LoginPage/>}></Route>
             <Route path="/sidebar" element={<Sidebar/>}></Route>
             <Route path="/admin" element={<DashHome/>}></Route>
+            <Route path="/view" element={<ViewProducts/>}></Route>
+            <Route path="/form" element={<ProductForm/>}></Route>
+
 
             
 

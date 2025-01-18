@@ -78,7 +78,7 @@ const ProductPage = () => {
     return (
         <div className="product-page py-5">
             {/* Sidebar */}
-            <div className="sidebar">
+            <div className="productPage-sidebar">
                 <h3>Categories</h3>
                 
                 
@@ -117,7 +117,7 @@ const ProductPage = () => {
             </div>
 
             {/* Main Section */}
-            <div className="main">
+            <div className="productPage-main">
                 <div className="top-bar">
                     <div className="product-count">
                         Showing <span className="product-length">{filteredProducts.length}</span> of <span className="product-length">{products.length}</span> Products

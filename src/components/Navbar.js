@@ -156,6 +156,10 @@ const Navbar = () => {
               <li><Link to='/wishlest'>Wistlest</Link></li>
               <li><Link to='/sidebar'>Sidebar</Link></li>
               <li><Link to='/admin'>Dashboard</Link></li>
+              <li><Link to='/view'>View</Link></li>
+              <li><Link to='/form'>Form</Link></li>
+
+
 
 
             </ul>

@@ -16,7 +16,8 @@
       "discountPrice": 600,
       "onSale":true,
       "sale":23,
-      "category": "Clothing"
+      "category": "Clothing",
+      "stock":20
 
     },
     {
@@ -80,7 +81,7 @@
       "price": 1500,
       "discountPrice": 1200,
       "onSale":true,
-      "sale":"30%", 
+      "sale":15, 
       "category": "Clothing"
     },
     {

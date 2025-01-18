@@ -10,18 +10,18 @@ body {
     padding: 1rem;
   }
   
-  .sidebar {
+  .productPage-sidebar {
     width: 20%;
     padding: 1rem;
     border-radius: 8px;
   }
   
-  .sidebar h3 {
+  .productPage-sidebar h3 {
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
   
-  .sidebar label {
+  .productPage-sidebar label {
     display: block;
     margin-bottom: 0.3rem;
     cursor: pointer;
@@ -30,7 +30,7 @@ body {
   }
 
   
-  .main {
+  .productPage-main {
     flex: 1;
   }
   
@@ -120,7 +120,7 @@ body {
       flex-direction: column;
     }
   
-    .sidebar {
+    .productPage-sidebar {
       width: 100%;
     }
   

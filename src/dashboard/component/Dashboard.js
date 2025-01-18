@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     const toggleTheme = () => {
         setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-      };
+    };
     
       // Apply the theme to the 'html' element
       document.documentElement.setAttribute('data-theme', theme);
@@ -76,7 +76,7 @@ const Dashboard = () => {
                                     className="nav-img"
                                     alt="articles"
                                 />
-                                <h3> Articles</h3>
+                                <h3> Products</h3>
                             </div>
                             <div className="nav-option option3">
                                 <img
