@@ -76,7 +76,7 @@ const ProductPage = () => {
 
 
     return (
-        <div className="product-page py-5">
+        <div className="product-page" style={{paddingTop:"7rem"}}>
             {/* Sidebar */}
             <div className="productPage-sidebar">
                 <h3>Categories</h3>

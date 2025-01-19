@@ -85,7 +85,7 @@ export const ReviewsForm = ({ isFormVisible, toggleForm, addReview   }) => {
   <div>
     {isFormVisible ? (
         <div className="modal">
-          <div className="form-container">
+          <div className="review-form-container">
             <button className="close-button" onClick={handleClose}>
               &times;
             </button>

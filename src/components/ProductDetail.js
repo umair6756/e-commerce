@@ -55,6 +55,25 @@ const ProductDetail = () => {
 
 
 
+  // color and size picker 
+
+
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+
+  // Color and Size options
+  const colors = [
+    { id: 1, color: '#FF5733' },
+    { id: 2, color: '#33C1FF' },
+    { id: 3, color: '#81C784' },
+    { id: 4, color: '#FFEB3B' },
+  ];
+
+  const sizes = ['S', 'M', 'L', 'XL'];
+
+
+
+
 
 
 
@@ -62,7 +81,7 @@ const ProductDetail = () => {
 
 
   return (
-    <div className='my-5 py-5'>
+    <div style={{paddingTop:"7rem"}}>
       {/* <HeroSection heroBackground="product-detail-hero"/> */}
 
       <div className='LinkProduct border-bottom mx-5 my-3 py-3'>
@@ -131,6 +150,41 @@ const ProductDetail = () => {
             
 
           </div>
+
+          {/* Color Picker */}
+         
+
+          <div className='d-flex gap-5 my-3' >
+          <p className='quantity-heading text-uppercase fw-bold' style={{ color: '#333', opacity: '.7'}}>color</p>
+
+          <div className="color-picker">
+            {product.colors.map((color, colorIndex) => (
+              <div
+                key={colorIndex}
+                className={`color-option ${selectedColor === color ? 'selected' : ''}`}
+                style={{ backgroundColor: color }}
+                onClick={() => setSelectedColor(color)}
+              ></div>
+            ))}
+          </div>
+          </div>
+          {/* Size Picker */}
+          <div className='d-flex gap-5 my-3' >
+          <p className='quantity-heading text-uppercase fw-bold' style={{ color: '#333', opacity: '.7'}}>size</p>
+
+          <div className="size-picker">
+            {product.sizes.map((size, sizeIndex) => (
+              <div
+                key={sizeIndex}
+                className={`size-option ${selectedSize === size ? 'selected' : ''}`}
+                onClick={() => setSelectedSize(size)}
+              >
+                {size}
+              </div>
+            ))}
+         </div>
+         </div>
+
           <div className='d-flex flex-row '>
             <div className='Buttons ' onClick={() => { addToCart(product); }}>{<Button label="Add to Cart" />}</div>
             <div className='Buttons mx-5 my-0'  ><Link to="/checkout" style={{ margin: "0", padding: "0" }}>{<Button label="BUY Now" />}</Link></div>

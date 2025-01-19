@@ -4,6 +4,7 @@ import './ViewProducts.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCross, faXmark } from "@fortawesome/free-solid-svg-icons";
+import Sidebar from '../component/Sidebar';
 
 
 const ViewProducts = () => {
@@ -57,7 +58,7 @@ const ViewProducts = () => {
 
   return (
     <div>
-
+ 
 <div className="app-container">
   <div className="sidebar">
     <div className="sidebar-header">
@@ -977,19 +978,19 @@ const ViewProducts = () => {
       <h2>Add New Product</h2>
       <button className="productForm-removeBtn" onClick={toggleForm}><FontAwesomeIcon icon={faXmark}/></button>
       <form className="product-form">
-        <div className="form-group">
+        <div className="product-form-group">
           <label htmlFor="id">Product ID</label>
           <input type="number" id="id" name="id" placeholder="Enter Product ID" required />
         </div>
 
-        <div className="form-group">
+        <div className="product-form-group">
           <label htmlFor="name">Product Name</label>
           <input type="text" id="name" name="name" placeholder="Enter Product Name" required />
         </div>
 
-        <div className="form-group image-upload">
-          <label htmlFor="image">Product Image</label>
-          <div className="custom-file-upload">
+        <div className="product-form-group image-upload">
+          <label htmlFor="image" className='addProduct-image'>Product Image</label>
+          
             <input
               type="file"
               id="image"
@@ -997,8 +998,7 @@ const ViewProducts = () => {
               accept="image/*"
               onChange={handleImageUpload}
             />
-            <span>Choose Image</span>
-          </div>
+       
           {imagePreview && (
             <div className="image-preview">
               <img src={imagePreview} alt="Product Preview" />
@@ -1006,12 +1006,12 @@ const ViewProducts = () => {
           )}
         </div>
 
-        <div className="form-group">
+        <div className="product-form-group">
           <label htmlFor="price">Price</label>
           <input type="number" id="price" name="price" placeholder="Enter Price" required />
         </div>
 
-        <div className="form-group">
+        <div className="product-form-group">
           <label htmlFor="discountPrice">Discount Price</label>
           <input
             type="number"
@@ -1021,9 +1021,9 @@ const ViewProducts = () => {
           />
         </div>
 
-        <div className="form-group toggle-group">
+        <div className="product-form-group toggle-group">
           <label htmlFor="onSale">On Sale</label>
-          <div className="toggle-switch">
+          <div className="switch">
             <input
               type="checkbox"
               id="onSale"
@@ -1036,7 +1036,7 @@ const ViewProducts = () => {
         </div>
 
         {onSale && (
-          <div className="form-group">
+          <div className="product-form-group">
             <label htmlFor="sale">Sale Percentage</label>
             <input
               type="number"
@@ -1048,7 +1048,7 @@ const ViewProducts = () => {
           </div>
         )}
 
-        <div className="form-group">
+        <div className="product-form-group">
           <label htmlFor="category">Category</label>
           <select id="category" name="category" required>
             <option value="">Select Category</option>
@@ -1058,7 +1058,7 @@ const ViewProducts = () => {
           </select>
         </div>
 
-        <div className="form-group">
+        <div className="product-form-group">
           <label htmlFor="stock">Stock</label>
           <input type="number" id="stock" name="stock" placeholder="Enter Stock Quantity" required />
         </div>

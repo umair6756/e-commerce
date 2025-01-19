@@ -280,6 +280,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './Carasole.css';
+import { Link } from 'react-router-dom';
 import image1 from '../banners-image/banner5.jpg';
 import image2 from '../banners-image/banner2.jpg';
 import image3 from '../banners-image/banner3.jpg';
@@ -324,7 +325,7 @@ const Carasole = () => {
               <h2>{item.title}</h2>
               {/* <h1>{item.sale}</h1> */}
               <p>{item.description}</p>
-              <div className='shop-button'><Button label="Shop Now"></Button></div>
+              <div className='shop-button'><Link to="/product"><Button label="Shop Now"></Button></Link></div>
               
             </div>
             

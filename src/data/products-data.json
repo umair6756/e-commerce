@@ -6,7 +6,9 @@
       "src": "images/t-shirts/cloth1.png",
       "price": 500,
       "discountPrice": 350,
-      "category": "Clothing"
+      "category": "Clothing",
+      "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+      "sizes": ["S", "M", "L", "XL"]
     },
     {
       "id": 2,
@@ -17,7 +19,9 @@
       "onSale":true,
       "sale":23,
       "category": "Clothing",
-      "stock":20
+      "stock":20,
+      "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+      "sizes": ["S", "M", "L", "XL"]
 
     },
     {
@@ -26,7 +30,9 @@
       "image": "/images/glases/glases1.png",
       "price": 1200,
       "discountPrice": 900,
-      "category": "Glases"
+      "category": "Glases",
+      "colors": ["#33C1FF", "#81C784", "#FFEB3B"],
+      "sizes": ["M", "L", "XL"]
     },
     {
       "id": 4,
@@ -34,7 +40,9 @@
       "image": "/images/bags/bag1.png",
       "price": 1500,
       "discountPrice": 1200,
-      "category": "Bags"
+      "category": "Bags",
+      "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+      "sizes": ["S", "M", "L", "XL"]
     },
     {
         "id": 5,
@@ -42,7 +50,9 @@
         "image": "/images/bags/bag2.png",
         "price": 1500,
         "discountPrice": 1200,
-        "category": "Bags"
+        "category": "Bags",
+        "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+        "sizes": ["S", "M", "L", "XL"]
     },
     {
         "id": 6,
@@ -52,7 +62,9 @@
         "discountPrice": 1200,
         "onSale":true,
         "sale":10, 
-        "category": "Watches"
+        "category": "Watches",
+        "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+        "sizes": ["S", "M", "L", "XL"]
     },
     {
       "id": 7,
@@ -62,7 +74,9 @@
       "discountPrice": 1200,
       "onSale":true,
       "sale":12, 
-      "category": "Watches"
+      "category": "Watches",
+      "colors": ["#FF5733","#81C784", "#FFEB3B"],
+      "sizes": ["S","L", "XL"]
     },
     {
       "id": 8,
@@ -72,7 +86,9 @@
       "discountPrice": 1200,
       "onSale":true,
       "sale":50, 
-      "category": "Clothing"
+      "category": "Clothing",
+      "colors": ["#FF5733", "#33C1FF", "#81C784"],
+      "sizes": ["S", "M", "L", "XL"]
     },
     {
       "id": 9,
@@ -82,7 +98,9 @@
       "discountPrice": 1200,
       "onSale":true,
       "sale":15, 
-      "category": "Clothing"
+      "category": "Clothing",
+      "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+      "sizes": ["S", "M", "L"]
     },
     {
       "id": 10,
@@ -92,7 +110,9 @@
       "discountPrice": 1200,
       "onSale":true,
       "sale":30, 
-      "category": "Clothing"
+      "category": "Clothing",
+      "colors": ["#FF5733", "#33C1FF", "#81C784", "#FFEB3B"],
+      "sizes": ["S", "M", "L", "XL"]
     } 
   ]
   

@@ -643,7 +643,7 @@
 
 .productForm-removeBtn{
   position: absolute;
-  top: 12%;
+  top: 10%;
   left: 80%;
   border: none;
   outline: none;
@@ -660,32 +660,32 @@
 }
 
 /* Form Group */
-.form-group {
+.product-form-group {
   display: flex;
   flex-direction: column;
 }
 
-.form-group label {
+.product-form-group label {
   margin-bottom: 8px;
   font-weight: 600;
   font-size: 16px;
   color: #333333;
 }
 
-.form-group input,
-.form-group select {
+.product-form-group input,
+.product-form-group select {
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #cccccc;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 16px;
   background: #f9f9f9;
   transition: all 0.3s ease;
 }
 
 /* Focus Effects */
-.form-group input:focus,
-.form-group select:focus {
+.product-form-group input:focus,
+.product-form-group select:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
@@ -698,34 +698,34 @@
   gap: 10px;
 }
 
-.custom-file-upload input[type="file"] {
-  display: none;
-}
-
-.custom-file-upload span {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: #ffffff;
-  border-radius: 5px;
+.addProduct-image{
+  height: 3.5rem;
+  width: 10rem;
+  border: 1px solid #C19A6B;
+  text-align: center;
+  align-content: center;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: .5s;
+  margin-top: 2rem;
 }
 
-.custom-file-upload span:hover {
-  background-color: #0056b3;
+ .addProduct-image:hover{
+  background-color: #C19A6B;
+  color: white;
 }
+
+
 
 /* Image Preview */
 .image-preview {
   margin-top: 10px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .image-preview img {
-  max-width: 150px;
-  max-height: 150px;
-  border-radius: 10px;
+  width: 160px;
+  height: 160px;
+  /* border-radius: 10px; */
   border: 2px solid #007bff;
 }
 
@@ -777,19 +777,19 @@
 /* Button */
 .submit-button {
   padding: 15px 20px;
-  background: #007bff;
+  background: #C19A6B;
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
   border: none;
-  border-radius: 10px;
+  border-radius: none;
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
 
 .submit-button:hover {
-  background: #0056b3;
+  background: #b28a59;
   transform: translateY(-3px);
 }
 

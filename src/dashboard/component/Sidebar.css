@@ -187,8 +187,8 @@
 
               }
               .nav {
-                min-height: 91vh;
-                width: 250px;
+                min-height: 100vh;
+                width: 300px;
                 background-color: var(--background-color);
                 position: absolute;
                 top: 0px;
@@ -199,29 +199,35 @@
                 flex-direction: column;
                 justify-content: space-between;
                 overflow: hidden;
-                padding: 30px 0 20px 10px;
+                padding: 30px 30px 20px 10px;
               }
               .navcontainer {
                 height: calc(100vh - 70px);
-                width: 250px;
-                border-right: 3px solid var(--secondary-color);
+                width: 350px;
+                
                 position: relative;
                 overflow-y: scroll;
                 overflow-x: hidden;
                 transition: all 0.5s ease-in-out;
+                
               }
               .navcontainer::-webkit-scrollbar {
-                display: none;
+                width: 5px;
               }
+
+              .navcontainer::-webkit-scrollbar-track {
+                background-color: #9e9e9eb2;
+              }
+              
               .navcontainer.navclose {
                 width: 80px;
               }
               .nav-option {
-                width: 250px;
+                width: 280px;
                 height: 60px;
                 display: flex;
                 align-items: center;
-                padding: 0 30px 0 20px;
+                padding: 0 10px 3rem 10px;
                 gap: 20px;
                 transition: all 0.1s ease-in-out;
               }
@@ -387,61 +393,91 @@
 
 
 /* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  left: -50px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
+.toggle-checkbox {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  height: 0;
+  width: 0;
+ 
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+.toggle-slot {
+  position: relative;
+  left: -70px;
+  height: 4em;
+  width: 8em;
+  border: 5px solid #e4e7ec;
+  border-radius: 10em;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  box-shadow: 0px 10px 25px #e4e7ec;
+  transition: background-color 250ms;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.toggle-button {
+  transform: translate(4em, 0em);
+  /* position: absolute; */
+  height: 3.3em;
+  width: 3.3em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 0.50em #101827;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 0.75em white;
+  transform: translate(0em, 0em);
 }
 
+.sun-icon {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  color: #101827;
+}
 
+.sun-icon-wrapper {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  opacity: 1;
+  transform: translate(0em, 0em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(2em,2em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 3.5em;
+  width: 3.5em;
+  color: white;
+} 
+
+ .moon-icon-wrapper {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  opacity: 0;
+  transform: translate(-10em, 0em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(4em, -3.4em) rotate(-5deg);
+}
 
 
           

@@ -1,4 +1,4 @@
-import { faEye, faSearch, faStore } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faLightbulb, faMoon, faSearch, faStore, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { useState } from 'react';
@@ -12,9 +12,9 @@ const Dashboard = () => {
     const toggleTheme = () => {
         setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
     };
-    
-      // Apply the theme to the 'html' element
-      document.documentElement.setAttribute('data-theme', theme);
+
+    // Apply the theme to the 'html' element
+    document.documentElement.setAttribute('data-theme', theme);
 
     const toggleSidebar = () => {
         setShowSidebar(!showSidebar);
@@ -35,8 +35,8 @@ const Dashboard = () => {
                 <div className="searchbar">
                     <input type="text" placeholder="Search" />
                     <div className="searchbtn">
-                        <FontAwesomeIcon icon={faSearch} style={{fontSize:'20px'}}
-                            
+                        <FontAwesomeIcon icon={faSearch} style={{ fontSize: '20px' }}
+
                         />
                     </div>
                 </div>
@@ -119,12 +119,20 @@ const Dashboard = () => {
                                 <h3>Logout</h3>
                             </div>
 
-                            <div className='toggle-switch d-flex'>
-                                <label className="switch mx-0">
-                                    <input type="checkbox" onClick={toggleTheme}/>
-                                    <span className="slider"></span>
+                            <div className='toggle-switch' style={{paddingBottom:"5rem"}}>
+                                <label className=" ">
+                                    <input class='toggle-checkbox' type='checkbox' onClick={toggleTheme}></input>
+                                    <div class='toggle-slot '>
+                                        <div class='sun-icon-wrapper'>
+                                            <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"><FontAwesomeIcon icon={faLightbulb} className='iconify sun-icon'/></div>
+                                        </div>
+                                        <div class='toggle-button'></div>
+                                        <div class='moon-icon-wrapper'>
+                                            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"><FontAwesomeIcon icon={faMoon} className='iconify moon-icon'/> </div>
+                                        </div>
+                                    </div>
                                 </label>
-                                <h3 className='mx-0 px-0'>Light</h3>
+                                
                             </div>
                         </div>
                     </nav>
