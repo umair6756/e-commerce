@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/images/2.jpg",
+    "heroimage": "/images/2.jpg",
     "title": "How AI Is Transforming E-Commerce",
     "detailTitle": "How AI Is Transforming E-Commerce",
     "author": "Jane Smith",
@@ -11,11 +11,18 @@
     "blogContent1": "Artificial Intelligence (AI) is revolutionizing the e-commerce landscape, offering innovative ways to enhance customer experience, streamline operations, and boost revenue. From personalized recommendations to automated customer service, AI's influence is undeniable and continues to grow.",
     "blogContent2": "AI enables e-commerce platforms to deliver highly personalized shopping experiences. By analyzing customer behavior, preferences, and browsing history, AI algorithms can recommend products tailored to individual users. For instance, platforms like Amazon use AI-driven recommendation engines to suggest items based on past purchases and searches, significantly increasing customer satisfaction and sales.",
     "blogContent3": "Dynamic pricing, which involves adjusting prices in real time based on market demand, competitor pricing, and other factors, is another area where AI excels. AI algorithms can analyze vast amounts of data to determine optimal pricing strategies that maximize profitability while remaining competitive.",
+    "image1": "",
+    "image2": "",
+
     "blogContent4": "The integration of AI in e-commerce is transforming the industry, creating opportunities for businesses to innovate and grow. By leveraging AI's capabilities, e-commerce platforms can provide better customer experiences, increase efficiency, and stay competitive in a rapidly evolving market. As AI technology continues to advance, its impact on e-commerce will only deepen, shaping the future of online shopping.    ",
     "content5Title": "Enhanced Customer Support",
     "blogContent5": "Chatbots and virtual assistants powered by AI have transformed customer service in e-commerce. These tools can handle a large volume of queries simultaneously, provide instant responses, and operate 24/7. Advanced AI-powered chatbots can even understand natural language, offering human-like interactions that resolve issues efficiently. This not only improves customer satisfaction but also reduces operational costs.",
+    "image3": "",
+    
     "content6Title": "Visual Search and Voice Commerce",
     "blogContent6": "AI has enabled innovative shopping methods like visual search and voice commerce. Visual search allows customers to upload images to find similar products, making it easier to shop for specific items. Voice assistants like Alexa and Google Assistant enable users to make purchases through voice commands, offering a hands-free shopping experience.",
+    "image4": "",
+       
     "points1": "Visual search simplifies finding similar products",
     "points2": "AI analyzes images for better product recommendations.",
     "points3": "Natural language processing enhances voice assistant accuracy.",

@@ -3,64 +3,41 @@ import { useState } from 'react';
 import './ViewProducts.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faArrowUp, faArrowsUpDown, faBorderAll, faCross, faEllipsisVertical, faFilter, faList, faMoon, faXmark } from "@fortawesome/free-solid-svg-icons";
-import Sidebar from '../component/Sidebar';
+import {  faBorderAll, faCross, faEllipsisVertical, faFilter, faList, faMoon, } from "@fortawesome/free-solid-svg-icons";
 
 
-const ViewProducts = () => {
-
+const ViewBlog = () => {
     const [isFilterActive, setIsFilterActive] = useState(false);
-  const [isGridView, setIsGridView] = useState(true);
-  const [theme, setTheme] = useState("light")
-
-  // Toggle filter menu visibility
-  const toggleFilterMenu = () => {
-    setIsFilterActive(prevState => !prevState);
-  };
-
-  // Switch to grid view
-  const switchToGridView = () => {
-    setIsGridView(true);
-  };
-
-  // Switch to list view
-  const switchToListView = () => {
-    setIsGridView(false);
-  };
-
-  // Toggle light/dark mode
+    const [isGridView, setIsGridView] = useState(true);
+    const [theme, setTheme] = useState("light")
   
-
-  const toggleTheme = () => {
-      setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+    // Toggle filter menu visibility
+    const toggleFilterMenu = () => {
+      setIsFilterActive(prevState => !prevState);
+    };
   
-    // Apply the theme to the 'html' element
-  document.documentElement.setAttribute('data-theme', theme);
-
-
-  // proudct Form  ==========
-
-  const [imagePreview, setImagePreview] = useState(null);
-  const [onSale, setOnSale] = useState(false);
-  const [formVisible, setFormVisible] = useState(false)
-
-  const toggleForm = () => {
-    setFormVisible((prev) => !prev)
-  }
-
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImagePreview(URL.createObjectURL(file));
-    }
-  };
-
+    // Switch to grid view
+    const switchToGridView = () => {
+      setIsGridView(true);
+    };
+  
+    // Switch to list view
+    const switchToListView = () => {
+      setIsGridView(false);
+    };
+  
+    // Toggle light/dark mode
+    
+  
+    const toggleTheme = () => {
+        setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    };
+    
+      // Apply the theme to the 'html' element
+    document.documentElement.setAttribute('data-theme', theme);
   return (
     <div>
-      <Sidebar/>
- 
-<div className="app-container">
+        <div className="app-container">
   <div className="sidebar">
     <div className="sidebar-header">
 
@@ -74,7 +51,7 @@ const ViewProducts = () => {
       <button className="mode-switch" title="Switch Theme" onClick={toggleTheme}>
         <FontAwesomeIcon icon={faMoon} className='fs-3' style={{transform:"rotate(-25deg)"}}/>
       </button>
-      <button className="app-content-headerButton" onClick={toggleForm}>Add Product</button>
+      <button className="app-content-headerButton" >Add Product</button>
     </div>
     <div className="app-content-actions">
       <input className="search-bar" placeholder="Search..." type="text" />
@@ -114,32 +91,33 @@ const ViewProducts = () => {
     </div>
     <div className={`products-area-wrapper ${isGridView ? 'gridView' : 'tableView'}`}>
       <div className="products-header">
-        <div className="product-cell image">
-          Items
-          <button className="sort-button ">
-           <FontAwesomeIcon icon={faArrowDown} className='fw-0 fs-6'/>
-           <FontAwesomeIcon icon={faArrowUp} className='fw-0 fs-6'/>
+        <div className="product-cell image fw-bold">
+          Title
 
-          </button>
         </div>
         <div className="product-cell category">
           Category
 
         </div>
         <div className="product-cell status-cell">
-          Status
+          Author
 
         </div>
         <div className="product-cell sales">
-          Sales
+          Published
 
         </div>
         <div className="product-cell stock">
-          Stock
- 
+         Comments
+   
+
         </div>
         <div className="product-cell price">
-          Price
+          Status
+
+        </div>
+        <div className="product-cell price">
+          Action
 
         </div>
       </div>
@@ -152,7 +130,7 @@ const ViewProducts = () => {
             src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
             alt="product"
           />
-          <span>Ocean</span>
+          <span>Pakistan has four...</span>
         </div>
         <div className="product-cell category">
           <span className="cell-label">Category:</span>Furniture
@@ -162,13 +140,16 @@ const ViewProducts = () => {
           <span className="status active">Active</span>
         </div>
         <div className="product-cell sales">
-          <span className="cell-label">Sales:</span>11
+          <span className="cell-label">Author:</span>11
         </div>
         <div className="product-cell stock">
-          <span className="cell-label">Stock:</span>36
+          <span className="cell-label">Published:</span>36
         </div>
         <div className="product-cell price">
-          <span className="cell-label">Price:</span>$560
+          <span className="cell-label">Comments:</span>$560
+        </div>
+        <div className="product-cell action">
+          <span className="cell-label">Comments:</span>$560
         </div>
       </div>
       <div className="products-row">
@@ -511,113 +492,8 @@ const ViewProducts = () => {
   </div>
 </div>
 
-
-
-
-{/* =============  Product Form    ============== */}
-
-{formVisible &&  <div className="form-container">
-      <div className="show-form">
-      <h2>Add New Product</h2>
-      <button className="productForm-removeBtn" onClick={toggleForm}><FontAwesomeIcon icon={faXmark}/></button>
-      <form className="product-form">
-        <div className="product-form-group">
-          <label htmlFor="id">Product ID</label>
-          <input type="number" id="id" name="id" placeholder="Enter Product ID" required />
-        </div>
-
-        <div className="product-form-group">
-          <label htmlFor="name">Product Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter Product Name" required />
-        </div>
-
-        <div className="product-form-group image-upload">
-          <label htmlFor="image" className='addProduct-image'>Product Image</label>
-          
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              onChange={handleImageUpload}
-            />
-       
-          {imagePreview && (
-            <div className="image-preview">
-              <img src={imagePreview} alt="Product Preview" />
-            </div>
-          )}
-        </div>
-
-        <div className="product-form-group">
-          <label htmlFor="price">Price</label>
-          <input type="number" id="price" name="price" placeholder="Enter Price" required />
-        </div>
-
-        <div className="product-form-group">
-          <label htmlFor="discountPrice">Discount Price</label>
-          <input
-            type="number"
-            id="discountPrice"
-            name="discountPrice"
-            placeholder="Enter Discount Price"
-          />
-        </div>
-
-        <div className="product-form-group toggle-group">
-          <label htmlFor="onSale">On Sale</label>
-          <div className="switch">
-            <input
-              type="checkbox"
-              id="onSale"
-              name="onSale"
-              checked={onSale}
-              onChange={(e) => setOnSale(e.target.checked)}
-            />
-            <label htmlFor="onSale" className="slider"></label>
-          </div>
-        </div>
-
-        {onSale && (
-          <div className="product-form-group">
-            <label htmlFor="sale">Sale Percentage</label>
-            <input
-              type="number"
-              id="sale"
-              name="sale"
-              placeholder="Enter Sale Percentage"
-              required={onSale}
-            />
-          </div>
-        )}
-
-        <div className="product-form-group">
-          <label htmlFor="category">Category</label>
-          <select id="category" name="category" required>
-            <option value="">Select Category</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Home">Home</option>
-          </select>
-        </div>
-
-        <div className="product-form-group">
-          <label htmlFor="stock">Stock</label>
-          <input type="number" id="stock" name="stock" placeholder="Enter Stock Quantity" required />
-        </div>
-
-        <button type="submit" className="submit-button">
-          Add Product
-        </button>
-      </form>
-      </div>
-    </div>}
-
-
-
-
     </div>
   )
 }
 
-export default ViewProducts
+export default ViewBlog

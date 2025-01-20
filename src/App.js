@@ -43,6 +43,8 @@ import Sidebar from "./dashboard/component/Sidebar";
 import DashHome from "./dashboard/pages/DashHome";
 import ViewProducts from "./dashboard/component/ViewProducts";
 import ProductForm from "./dashboard/component/ProductForm";
+import BlogPostForm from "./dashboard/component/BlogPostForm";
+import ViewBlog from "./dashboard/component/ViewBlog";
 
 
 
@@ -98,7 +100,13 @@ function App() {
             <Route path="/sidebar" element={<Sidebar/>}></Route>
             <Route path="/admin" element={<DashHome/>}></Route>
             <Route path="/view" element={<ViewProducts/>}></Route>
-            <Route path="/form" element={<ProductForm/>}></Route>
+            <Route path="/form" element={<BlogPostForm/>}></Route>
+            <Route path="/viewblog" element={<ViewBlog/>}></Route>
+            <Route path="/productform" element={<ProductForm/>}></Route>
+
+
+
+
 
 
             

@@ -646,4 +646,176 @@
                 width: 180px;
               }
             }
-            
+
+
+
+
+
+/* Text ieditot */
+
+
+
+/* Main Container */
+.advanced-blog-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+.advanced-blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem;
+}
+
+.advanced-blog-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* ReactQuill Rich Text Editor */
+.ql-container {
+  height: 800px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.ql-toolbar {
+  border-radius: 4px 4px 0 0;
+}
+
+.ql-container.ql-snow {
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+/* Thumbnail Preview */
+.thumbnail-preview {
+  margin-top: 0.5rem;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Button */
+.btn-submit {
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+
+
+.ql-image {
+  max-width: 50%;
+  height: auto;
+}
+
+.thumbnail-preview {
+  margin-top: 0.5rem;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+
+
+.ql-editor img {
+  width: 200px; /* Prevent images from overflowing */
+  height: 200px;
+  cursor: pointer; /* Make images clickable */
+  border: 2px solid transparent;
+}
+
+.ql-editor img:hover {
+  border: 2px solid #007bff; /* Highlight image on hover */
+}
+
+.image-controls {
+  position: absolute;
+  top: 50%;
+
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 5px;
+  z-index: 1000;
+}
+
+.image-controls button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.image-controls button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .advanced-blog-form-container {
+    padding: 1rem;
+  }
+
+  input,
+  select {
+    font-size: 0.9rem;
+  }
+
+  .btn-submit {
+    font-size: 0.9rem;
+  }
+}

@@ -1,121 +1,142 @@
 import React, { useState } from "react";
-import "./ViewProducts.css"; // Updated styles
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCross, faXmark } from "@fortawesome/free-solid-svg-icons";
+import "./ViewProducts.css";
 
 const ProductForm = () => {
-  const [imagePreview, setImagePreview] = useState(null);
-  const [onSale, setOnSale] = useState(false);
+  const [product, setProduct] = useState({
+    name: "",
+    category: "",
+    brand: "",
+    quantity: "",
+    tagNumber: "",
+    tags: "",
+    description: "",
+    size: [],
+    color: [],
+    price: "",
+    discount: "",
+    tax: "",
+    image: "",
+  });
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImagePreview(URL.createObjectURL(file));
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      setProduct((prev) => ({
+        ...prev,
+        [name]: checked
+          ? [...(prev[name] || []), value]
+          : prev[name].filter((item) => item !== value),
+      }));
+    } else if (name === "image") {
+      setProduct((prev) => ({ ...prev, image: URL.createObjectURL(e.target.files[0]) }));
+    } else {
+      setProduct((prev) => ({ ...prev, [name]: value }));
     }
   };
 
-  const [formVisible, setFormVisible] = useState(false)
-
-  const toggleForm = () => {
-    setFormVisible((prev) => !prev)
-  }
-
   return (
-    <div className="form-container">
-      <div className="show-form">
-      <h2>Add New Product</h2>
-      <button className="productForm-removeBtn" onClick={toggleForm}><FontAwesomeIcon icon={faXmark}/></button>
-      <form className="product-form">
-        <div className="form-group">
-          <label htmlFor="id">Product ID</label>
-          <input type="number" id="id" name="id" placeholder="Enter Product ID" required />
+    <div className="product-add-container">
+      {/* Form Section */}
+      <form className="product-add-form">
+        {/* Image Upload Section */}
+        <div className="form-section image-section">
+          <h3>Upload Product Image</h3>
+          <label>ADD IMAGE 
+          <input type="file" name="image" accept="image/*" onChange={handleChange} />
+            
+             </label>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="name">Product Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter Product Name" required />
-        </div>
-
-        <div className="form-group image-upload">
-          <label htmlFor="image">Product Image</label>
-          <div className="custom-file-upload">
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              onChange={handleImageUpload}
-            />
-            <span>Choose Image</span>
-          </div>
-          {imagePreview && (
-            <div className="image-preview">
-              <img src={imagePreview} alt="Product Preview" />
-            </div>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="price">Price</label>
-          <input type="number" id="price" name="price" placeholder="Enter Price" required />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="discountPrice">Discount Price</label>
-          <input
-            type="number"
-            id="discountPrice"
-            name="discountPrice"
-            placeholder="Enter Discount Price"
-          />
-        </div>
-
-        <div className="form-group toggle-group">
-          <label htmlFor="onSale">On Sale</label>
-          <div className="toggle-switch">
-            <input
-              type="checkbox"
-              id="onSale"
-              name="onSale"
-              checked={onSale}
-              onChange={(e) => setOnSale(e.target.checked)}
-            />
-            <label htmlFor="onSale" className="slider"></label>
-          </div>
-        </div>
-
-        {onSale && (
+        {/* Product Information Section */}
+        <div className="form-section product-info-section">
+          <h3>Product Information</h3>
+          <div className="border-span px-0 mx-0">ff</div>
           <div className="form-group">
-            <label htmlFor="sale">Sale Percentage</label>
-            <input
-              type="number"
-              id="sale"
-              name="sale"
-              placeholder="Enter Sale Percentage"
-              required={onSale}
-            />
+            <label>Product Name</label>
+            <input type="text" name="name" placeholder="Enter product name" onChange={handleChange} />
           </div>
-        )}
+          <div className="form-group">
+            <label>Category</label>
+            <input type="text" name="category" placeholder="Enter category" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Brand</label>
+            <input type="text" name="brand" placeholder="Enter brand" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Quantity</label>
+            <input type="number" name="quantity" placeholder="Enter quantity" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Tag Number</label>
+            <input type="text" name="tagNumber" placeholder="Enter tag number" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Tags</label>
+            <input type="text" name="tags" placeholder="Enter tags (comma separated)" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Description</label>
+            <textarea name="description" rows="3" placeholder="Enter description" onChange={handleChange}></textarea>
+          </div>
+          <div className="form-group">
+            <label>Size</label>
+            <div className="size-picker">
+              <label className="size-option"><input type="checkbox" name="size" value="S" onChange={handleChange} /> S</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="M" onChange={handleChange} /> M</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="L" onChange={handleChange} /> L</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="XL" onChange={handleChange} /> XL</label>
+            </div>
+          </div>
+          <div className="form-group">
+            <label>Color</label>
+            <div className="color-picker">
+              <label className="color-option" style={{background:"red"}}><input type="checkbox" name="color" value="Red" onChange={handleChange} /> </label>
+              <label className="color-option" style={{background:"blue"}}><input type="checkbox" name="color" value="Blue" onChange={handleChange} /> </label>
+              <label className="color-option" style={{background:"green"}}><input type="checkbox" name="color" value="Green" onChange={handleChange} /> </label>
+              <label className="color-option" style={{background:"black"}}><input type="checkbox" name="color" value="Black" onChange={handleChange} /> </label>
+              
+              <label className="color-option" style={{background:"white"}}><input type="checkbox" name="color" value="White" onChange={handleChange} /> </label>
 
-        <div className="form-group">
-          <label htmlFor="category">Category</label>
-          <select id="category" name="category" required>
-            <option value="">Select Category</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Home">Home</option>
-          </select>
+            </div>
+          </div>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="stock">Stock</label>
-          <input type="number" id="stock" name="stock" placeholder="Enter Stock Quantity" required />
+        {/* Price Information Section */}
+        <div className="form-section price-info-section">
+          <h3>Price Information</h3>
+          <div className="form-group">
+            <label>Price (₹)</label>
+            <input type="number" name="price" placeholder="Enter price" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Discount (%)</label>
+            <input type="number" name="discount" placeholder="Enter discount percentage" onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>Tax (%)</label>
+            <input type="number" name="tax" placeholder="Enter tax percentage" onChange={handleChange} />
+          </div>
         </div>
 
-        <button type="submit" className="submit-button">
-          Add Product
-        </button>
+        {/* Submit Button */}
+        <button type="submit" className="create-button">Create Product</button>
       </form>
+
+      {/* Product Preview Card */}
+      <div className="product-preview">
+        <h3>Product Preview</h3>
+        <div className="preview-card">
+          {product.image && <img src={product.image} alt="Product" />}
+          <h4>{product.name || "Product Name"}</h4>
+          <p>{product.description || "Product description will appear here."}</p>
+          <p><strong>Category:</strong> {product.category || "N/A"}</p>
+          <p><strong>Brand:</strong> {product.brand || "N/A"}</p>
+          <p><strong>Price:</strong> ₹{product.price || "0.00"} <small>(+{product.tax || "0"}% tax)</small></p>
+          <p><strong>Discount:</strong> {product.discount || "0"}%</p>
+          <p><strong>Sizes:</strong> {product.size.length ? product.size.join(", ") : "N/A"}</p>
+          <p><strong>Colors:</strong> {product.color.length ? product.color.join(", ") : "N/A"}</p>
+        </div>
       </div>
     </div>
   );
