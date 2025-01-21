@@ -58,7 +58,7 @@ const ViewProducts = () => {
 
   return (
     <div>
-      <Sidebar/>
+      <Sidebar label="Products"/>
  
 <div className="app-container">
   <div className="sidebar">

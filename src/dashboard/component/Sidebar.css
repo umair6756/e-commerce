@@ -227,8 +227,10 @@
                 height: 60px;
                 display: flex;
                 align-items: center;
-                padding: 0 10px 3rem 10px;
+                text-align: center;
+                padding: 10px 10px 1rem 10px;
                 gap: 20px;
+               
                 transition: all 0.1s ease-in-out;
               }
               .nav-option:hover {
@@ -244,6 +246,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+             
                 gap: 30px;
                 color: var(--text-color);
               }
@@ -551,7 +554,7 @@
                 background-color: var(--secondary-color);
                 padding: 0 20px;
                 font-size: 15px;
-                border: 2px solid var(--text-color);
+                /* border: 2px solid var(--text-color); */
               }
             }
             
@@ -657,7 +660,7 @@
 
 /* Main Container */
 .advanced-blog-form-container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 2rem auto;
   padding: 1.5rem;
   background-color: #f9f9f9;
@@ -671,6 +674,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 3rem;
+  width: 70%;
 }
 
 .advanced-blog-form h2 {
@@ -708,7 +712,7 @@ select:focus {
 
 /* ReactQuill Rich Text Editor */
 .ql-container {
-  height: 800px;
+  height: 400px;
   border-radius: 4px;
   font-size: 1rem;
 }

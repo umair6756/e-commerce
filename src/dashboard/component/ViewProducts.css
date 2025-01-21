@@ -808,7 +808,7 @@
 
 
 
-/* =====================   BlogPost Form     ========================== */
+/* =====================   Sidebar for products and other pages     ========================== */
 
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
 
@@ -823,11 +823,11 @@ strong {
 .page {
   max-width: 25%;
   height: 100%;
-  background: #fdfdfd;
+  background: var(--app-bg);
   font-family: 'Encode Sans Condensed', sans-serif;
   font-weight: 600;
   letter-spacing: .03em;
-  color: #212121;
+  color: var(--app-content-main-color);
   
  
 }
@@ -844,6 +844,7 @@ header {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   z-index: 100;
   
+  
 }
 
 main {
@@ -851,6 +852,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  
 }
 
 main > div {
@@ -903,8 +905,10 @@ main small {
 .button {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  
   z-index: 1;
   -webkit-appearance: none;
   border: 0;
@@ -914,7 +918,7 @@ main small {
   width: 30px;
   cursor: pointer;
   pointer-events: auto;
-  margin-left: 25px;
+  margin-left: 50px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -975,7 +979,7 @@ main small {
 }
 
 #nav-content li a:hover {
-  color: #BF7497;
+  color: var(--action-color-hover);
 }
 
 #nav-content li:not(.small) + .small {
@@ -998,6 +1002,16 @@ main small {
 
 #nav-container:focus-within #nav-content {
   transform: none;
+}
+
+@media (max-width:768px) {
+  header p{
+    display: none;
+  }
+
+  .button{
+    margin-left: 0 !important;
+  }
 }
 
 

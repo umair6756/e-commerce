@@ -99,9 +99,9 @@ function App() {
             <Route path="/login" element={<LoginPage/>}></Route>
             <Route path="/sidebar" element={<Sidebar/>}></Route>
             <Route path="/admin" element={<DashHome/>}></Route>
-            <Route path="/view" element={<ViewProducts/>}></Route>
+            <Route path="/adminproducts" element={<ViewProducts/>}></Route>
             <Route path="/form" element={<BlogPostForm/>}></Route>
-            <Route path="/viewblog" element={<ViewBlog/>}></Route>
+            <Route path="/adminblogs" element={<ViewBlog/>}></Route>
             <Route path="/productform" element={<ProductForm/>}></Route>
 
 

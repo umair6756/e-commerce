@@ -1,7 +1,9 @@
-import { faEye, faLightbulb, faMoon, faSearch, faStore, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faBlogger } from '@fortawesome/free-brands-svg-icons';
+import { faBars, faBlog, faBuilding, faEye, faGift, faLightbulb, faMessage, faMoon, faSearch, faShieldHeart, faShoppingBag, faShoppingCart, faStore, faSun, faTableColumns } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
 
@@ -24,13 +26,14 @@ const Dashboard = () => {
             <header>
                 <div className="logosec">
                     <div className="logo">GeeksForGeeks</div>
-                    <img
+                    {/* <img
                         src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
                         className="icn menuicn"
                         id="menuicn"
                         alt="menu-icon"
                         onClick={toggleSidebar}
-                    />
+                    /> */}
+                    <FontAwesomeIcon icon={faBars} onClick={toggleSidebar} className='fs-3' />
                 </div>
                 <div className="searchbar">
                     <input type="text" placeholder="Search" />
@@ -62,77 +65,59 @@ const Dashboard = () => {
                 <div className={`navcontainer ${showSidebar ? "navclose" : ""}`}>
                     <nav className="nav">
                         <div className="nav-upper-options">
+                           
+
                             <div className="nav-option option1">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-                                    className="nav-img"
-                                    alt="dashboard"
-                                />
-                                <h3> Dashboard</h3>
+
+                                    <FontAwesomeIcon icon={faTableColumns} />
+                                    <h3> Dashboard</h3>
                             </div>
+                            
+                            <Link to="/adminproducts">
                             <div className="option2 nav-option">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
-                                    className="nav-img"
-                                    alt="articles"
-                                />
-                                <h3> Products</h3>
+                                <FontAwesomeIcon icon={faGift} />
+                                <h3 > Products</h3>
                             </div>
+                            </Link>
+
+                            <Link to="/adminblogs">
                             <div className="nav-option option3">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-                                    className="nav-img"
-                                    alt="report"
-                                />
-                                <h3> Report</h3>
+                                <FontAwesomeIcon icon={faBlogger} />
+                                <h3> Blogs</h3>
                             </div>
+                            </Link>
+
                             <div className="nav-option option4">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-                                    className="nav-img"
-                                    alt="institution"
-                                />
-                                <h3> Institution</h3>
+                                <FontAwesomeIcon icon={faStore} />
+                                <h3> Orders</h3>
                             </div>
                             <div className="nav-option option5">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-                                    className="nav-img"
-                                    alt="blog"
-                                />
-                                <h3> Profile</h3>
+                                <FontAwesomeIcon icon={faMessage} />
+                                <h3>Messages</h3>
                             </div>
                             <div className="nav-option option6">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-                                    className="nav-img"
-                                    alt="settings"
-                                />
-                                <h3> Settings</h3>
+                                <FontAwesomeIcon icon={faShieldHeart} />
+                                <h3> Reviews</h3>
                             </div>
                             <div className="nav-option logout">
-                                <img
-                                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
-                                    className="nav-img"
-                                    alt="logout"
-                                />
-                                <h3>Logout</h3>
+                                <FontAwesomeIcon icon={faBuilding} />
+                                <h3>Others</h3>
                             </div>
 
-                            <div className='toggle-switch' style={{paddingBottom:"5rem"}}>
+                            <div className='toggle-switch' style={{ paddingBottom: "5rem" }}>
                                 <label className=" ">
                                     <input class='toggle-checkbox' type='checkbox' onClick={toggleTheme}></input>
                                     <div class='toggle-slot '>
                                         <div class='sun-icon-wrapper'>
-                                            <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"><FontAwesomeIcon icon={faLightbulb} className='iconify sun-icon'/></div>
+                                            <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"><FontAwesomeIcon icon={faLightbulb} className='iconify sun-icon' /></div>
                                         </div>
                                         <div class='toggle-button'></div>
                                         <div class='moon-icon-wrapper'>
-                                            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"><FontAwesomeIcon icon={faMoon} className='iconify moon-icon'/> </div>
+                                            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"><FontAwesomeIcon icon={faMoon} className='iconify moon-icon' /> </div>
                                         </div>
                                     </div>
                                 </label>
-                                
+
                             </div>
                         </div>
                     </nav>
@@ -142,11 +127,7 @@ const Dashboard = () => {
                     <div className="searchbar2">
                         <input type="text" name="" id="" placeholder="Search" />
                         <div className="searchbtn">
-                            <img
-                                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-                                className="icn srchicn"
-                                alt="search-button"
-                            />
+                            <FontAwesomeIcon icon={faSearch} />
                         </div>
                     </div>
                     <div className="box-container" style={{ color: 'white' }}>
@@ -163,33 +144,24 @@ const Dashboard = () => {
                         </div>
                         <div className="box box2">
                             <div className="text">
-                                <h2 className="topic-heading my-0 py-0">150</h2>
-                                <h2 className="topic">Likes</h2>
+                                <h2 className="topic-heading my-0 py-0">15</h2>
+                                <h2 className="topic">Blogs</h2>
                             </div>
-                            <img
-                                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
-                                alt="likes"
-                            />
+                            <FontAwesomeIcon icon={faBlogger} className='box-icon' />
                         </div>
                         <div className="box box3">
                             <div className="text">
                                 <h2 className="topic-heading">320</h2>
-                                <h2 className="topic">Comments</h2>
+                                <h2 className="topic">Reviews</h2>
                             </div>
-                            <img
-                                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
-                                alt="comments"
-                            />
+                            <FontAwesomeIcon icon={faGift} className='box-icon' />
                         </div>
                         <div className="box box4">
                             <div className="text">
                                 <h2 className="topic-heading">70</h2>
-                                <h2 className="topic">Published</h2>
+                                <h2 className="topic">Orders</h2>
                             </div>
-                            <img
-                                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png"
-                                alt="published"
-                            />
+                            <FontAwesomeIcon icon={faShoppingCart} className='box-icon' />
                         </div>
                     </div>
                     <div className="report-container">

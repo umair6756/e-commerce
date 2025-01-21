@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./Sidebar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAlignCenter, faAlignLeft, faAlignRight, faDeleteLeft, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const BlogPostForm = () => {
   const [blogData, setBlogData] = useState({
@@ -166,14 +168,14 @@ const BlogPostForm = () => {
 
         {controlsVisible && selectedImage && (
           <div className="image-controls">
-            <button onClick={() => resizeImage("100%", true)}>Square 100%</button>
-            <button onClick={() => resizeImage("75%", true)}>Square 75%</button>
-            <button onClick={() => resizeImage("50%", true)}>Square 50%</button>
-            <button onClick={() => resizeImage("25%", true)}>Square 25%</button>
-            <button onClick={() => alignImage("left")}>Align Left</button>
-            <button onClick={() => alignImage("center")}>Align Center</button>
-            <button onClick={() => alignImage("right")}>Align Right</button>
-            <button onClick={removeImage}>Remove Image</button>
+            <button onClick={() => resizeImage("100%", true)}>100%</button>
+            <button onClick={() => resizeImage("75%", true)}>75%</button>
+            <button onClick={() => resizeImage("50%", true)}>50%</button>
+            <button onClick={() => resizeImage("25%", true)}>25%</button>
+            <button onClick={() => alignImage("left")}><FontAwesomeIcon icon={faAlignLeft}/></button>
+            <button onClick={() => alignImage("center")}><FontAwesomeIcon icon={faAlignCenter}/></button>
+            <button onClick={() => alignImage("right")}><FontAwesomeIcon icon={faAlignRight}/></button>
+            <button onClick={removeImage}><FontAwesomeIcon icon={faTrash}/></button>
           </div>
         )}
 
