@@ -1,43 +1,27 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './ViewProducts.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBorderAll, faCross, faEllipsisVertical, faFilter, faList, faMoon, } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from '../component/Sidebar'
+import { adminContext } from './adminContext';
 
 const ViewBlog = () => {
-  const [isFilterActive, setIsFilterActive] = useState(false);
-  const [isGridView, setIsGridView] = useState(true);
-  const [theme, setTheme] = useState("light")
 
-  // Toggle filter menu visibility
-  const toggleFilterMenu = () => {
-    setIsFilterActive(prevState => !prevState);
-  };
-
-  // Switch to grid view
-  const switchToGridView = () => {
-    setIsGridView(true);
-  };
-
-  // Switch to list view
-  const switchToListView = () => {
-    setIsGridView(false);
-  };
-
-  // Toggle light/dark mode
+  const { 
+    isGridView, 
+    isFilterActive, 
+    toggleFilterMenu, 
+    toggleTheme, 
+    switchToGridView, 
+    switchToListView  // Assuming you have a 'switchToListView' function as well
+  } = useContext(adminContext);
 
 
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
 
-  // Apply the theme to the 'html' element
-  document.documentElement.setAttribute('data-theme', theme);
   return (
     <div>
-      <Sidebar label="Blogs"/>
       <div className="app-container">
         <div className="sidebar">
           <div className="sidebar-header">

@@ -157,8 +157,7 @@ const Navbar = () => {
               <li><Link to='/sidebar'>Sidebar</Link></li>
               <li><Link to='/admin'>Dashboard</Link></li>
               <li><Link to='/view'>View</Link></li>
-              <li><Link to='/form'>Form</Link></li>
-              <li><Link to='/viewblog'>Blog</Link></li>
+              <li><Link to='/invoice'>Invoice</Link></li>
               <li><Link to='/productform'>productForm</Link></li>
 
 

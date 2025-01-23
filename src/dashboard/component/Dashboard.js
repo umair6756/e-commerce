@@ -73,24 +73,26 @@ const Dashboard = () => {
                                     <h3> Dashboard</h3>
                             </div>
                             
-                            <Link to="/adminproducts">
+                            <Link to="/productpage">
                             <div className="option2 nav-option">
                                 <FontAwesomeIcon icon={faGift} />
                                 <h3 > Products</h3>
                             </div>
                             </Link>
 
-                            <Link to="/adminblogs">
+                            <Link to="/blogpage">
                             <div className="nav-option option3">
                                 <FontAwesomeIcon icon={faBlogger} />
                                 <h3> Blogs</h3>
                             </div>
                             </Link>
 
+                            <Link to="/orderpage">
                             <div className="nav-option option4">
                                 <FontAwesomeIcon icon={faStore} />
                                 <h3> Orders</h3>
                             </div>
+                            </Link>
                             <div className="nav-option option5">
                                 <FontAwesomeIcon icon={faMessage} />
                                 <h3>Messages</h3>

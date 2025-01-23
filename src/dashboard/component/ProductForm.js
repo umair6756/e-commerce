@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import "./ViewProducts.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import Sidebar from "./Sidebar";
+
 
 const ProductForm = () => {
   const [product, setProduct] = useState({
@@ -34,13 +38,35 @@ const ProductForm = () => {
     }
   };
 
+
+  const [theme, setTheme] = useState("light")
+
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+};
+
+  // Apply the theme to the 'html' element
+document.documentElement.setAttribute('data-theme', theme);
+
+
   return (
+    <>
+    <Sidebar/>
     <div className="product-add-container">
+
+<button className="mode-switch" title="Switch Theme" onClick={toggleTheme}>
+        <FontAwesomeIcon icon={faMoon} className='fs-3' style={{transform:"rotate(-25deg)"}}/>
+      </button>
+
+
       {/* Form Section */}
       <form className="product-add-form">
         {/* Image Upload Section */}
         <div className="form-section image-section">
           <h3>Upload Product Image</h3>
+          <div className="border-span px-0 mx-0 w-100"></div>
+
           <label>ADD IMAGE 
           <input type="file" name="image" accept="image/*" onChange={handleChange} />
             
@@ -50,7 +76,7 @@ const ProductForm = () => {
         {/* Product Information Section */}
         <div className="form-section product-info-section">
           <h3>Product Information</h3>
-          <div className="border-span px-0 mx-0">ff</div>
+          <div className="border-span px-0 mx-0 w-100"></div>
           <div className="form-group">
             <label>Product Name</label>
             <input type="text" name="name" placeholder="Enter product name" onChange={handleChange} />
@@ -105,6 +131,8 @@ const ProductForm = () => {
         {/* Price Information Section */}
         <div className="form-section price-info-section">
           <h3>Price Information</h3>
+          <div className="border-span px-0 mx-0 w-100"></div>
+
           <div className="form-group">
             <label>Price (₹)</label>
             <input type="number" name="price" placeholder="Enter price" onChange={handleChange} />
@@ -139,6 +167,7 @@ const ProductForm = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

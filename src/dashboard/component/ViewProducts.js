@@ -1,42 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react';
 import './ViewProducts.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp, faArrowsUpDown, faBorderAll, faCross, faEllipsisVertical, faFilter, faList, faMoon, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from '../component/Sidebar';
+import { adminContext } from '../component/adminContext'
 
 
 const ViewProducts = () => {
 
-    const [isFilterActive, setIsFilterActive] = useState(false);
-  const [isGridView, setIsGridView] = useState(true);
-  const [theme, setTheme] = useState("light")
-
-  // Toggle filter menu visibility
-  const toggleFilterMenu = () => {
-    setIsFilterActive(prevState => !prevState);
-  };
-
-  // Switch to grid view
-  const switchToGridView = () => {
-    setIsGridView(true);
-  };
-
-  // Switch to list view
-  const switchToListView = () => {
-    setIsGridView(false);
-  };
-
-  // Toggle light/dark mode
+  const { 
+    isGridView, 
+    isFilterActive, 
+    toggleFilterMenu, 
+    toggleTheme, 
+    switchToGridView, 
+    switchToListView  // Assuming you have a 'switchToListView' function as well
+  } = useContext(adminContext);
   
 
-  const toggleTheme = () => {
-      setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-  
-    // Apply the theme to the 'html' element
-  document.documentElement.setAttribute('data-theme', theme);
+
 
 
   // proudct Form  ==========
@@ -58,7 +42,6 @@ const ViewProducts = () => {
 
   return (
     <div>
-      <Sidebar label="Products"/>
  
 <div className="app-container">
   <div className="sidebar">
@@ -80,7 +63,7 @@ const ViewProducts = () => {
       <input className="search-bar" placeholder="Search..." type="text" />
       <div className="app-content-actions-wrapper">
         <div className="filter-button-wrapper">
-          <button className="action-button filter jsFilter" onClick={toggleFilterMenu}>
+          <button className="action-button filter jsFilter" onClick={toggleFilterMenu()}>
             <span>Filter</span>
             <FontAwesomeIcon icon={faFilter}/>
           </button>
@@ -615,7 +598,7 @@ const ViewProducts = () => {
 
 
 
-
+<adminProvider></adminProvider>
     </div>
   )
 }

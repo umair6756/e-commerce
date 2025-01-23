@@ -28,6 +28,7 @@ import APIKey from "./components/APIKey";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import AddToCartPage from "./pages/AddToCartPage";
 import { CartProvider } from "./components/CartContext";
+import { AdminProvider } from "./dashboard/component/adminContext";
 import AddToCart from "./components/AddToCart";
 import Wishlest from "./components/Wishlest";
 import WishlestPage from "./pages/WishlestPage";
@@ -45,8 +46,11 @@ import ViewProducts from "./dashboard/component/ViewProducts";
 import ProductForm from "./dashboard/component/ProductForm";
 import BlogPostForm from "./dashboard/component/BlogPostForm";
 import ViewBlog from "./dashboard/component/ViewBlog";
-
-
+import Invoice from "./dashboard/component/Invoice";
+import Orders from "./dashboard/component/Orders";
+import AdminProductPage from "./dashboard/pages/AdminProductPage";
+import AdminBlogPage from "./dashboard/pages/AdminBlogPage";
+import AdminOrdersPage from "./dashboard/pages/AdminOrdersPage";
 
 
 
@@ -83,6 +87,7 @@ function App() {
         <Footer/> */}
          <Router>
          <CartProvider>
+         <AdminProvider>
           <Routes>
             <Route path="/" element={<Home/>} ></Route>
             <Route path="/about" element={<About/>} ></Route>
@@ -98,11 +103,17 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetailPage/>}></Route>
             <Route path="/login" element={<LoginPage/>}></Route>
             <Route path="/sidebar" element={<Sidebar/>}></Route>
+            
             <Route path="/admin" element={<DashHome/>}></Route>
-            <Route path="/adminproducts" element={<ViewProducts/>}></Route>
+            <Route path="/productpage" element={<AdminProductPage/>}></Route>
             <Route path="/form" element={<BlogPostForm/>}></Route>
-            <Route path="/adminblogs" element={<ViewBlog/>}></Route>
+            <Route path="/blogpage" element={<AdminBlogPage/>}></Route>
             <Route path="/productform" element={<ProductForm/>}></Route>
+            <Route path="/invoice" element={<Invoice/>}></Route>
+            <Route path="/orderpage" element={<AdminOrdersPage/>}></Route>
+
+
+            
 
 
 
@@ -119,7 +130,7 @@ function App() {
             
       
           </Routes>
-
+          </AdminProvider>
             </CartProvider>
 
 
