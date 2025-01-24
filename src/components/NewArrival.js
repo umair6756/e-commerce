@@ -21,8 +21,24 @@ const NewArrival = () => {
   const minutes = Math.floor((timeLeft % 3600) / 60);
   const seconds = timeLeft % 60;
 
+  const bannerContainer = {
+    /* Background gradient ko comment kiya gaya hai */
+    // background: "linear-gradient(135deg, #C19A6B, #D1A77C, #C19A6B)",
+    
+    background: `url(${image}) no-repeat center center/cover`,
+    /* Alternative background color ko comment kiya gaya hai */
+    // backgroundColor: "#C19A6B",
+  
+    height: "500px", // Units ko string mein dena zaroori hai
+    padding: "40px 20px", // Padding bhi string mein
+    borderRadius: "0px", // border-radius => borderRadius
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)", // box-shadow => boxShadow
+    animation: "infiniteMove 3s ease-in-out infinite", // animation property
+  };
+  
+
   return (
-    <div className="banner-container">
+    <div className="banner-container" style={bannerContainer}>
       <Container>
         <Row className="justify-content-center align-items-center">
           <Col lg={6} md={12} className="text-center text-light">
@@ -45,13 +61,13 @@ const NewArrival = () => {
               Shop Now
             </Button>
           </Col>
-          <Col lg={6} md={12} className="text-center">
+          {/* <Col lg={6} md={12} className="text-center">
             <img
               src={image} // Replace with your image URL
               alt="Banner"
               className="banner-image"
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </div>

@@ -11,8 +11,8 @@ const Wishlest = () => {
     }
   return (
     <div>
-        <div className="cart-wrap">
-  <div className="container">
+        <div className="cart-wrap" >
+  <div className="container" style={{paddingTop:'3rem'}}>
     <div className="row">
       <div className="col-md-12">
         <div className="main-heading mb-10 my-3">My wishlist</div>

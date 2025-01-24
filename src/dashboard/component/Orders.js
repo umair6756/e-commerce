@@ -1,9 +1,9 @@
 import React, { useState,useContext } from 'react';
 import '../component/Sidebar.css';
 import './ViewProducts.css'
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBorderAll, faCross, faEllipsisVertical, faFilter, faList, faMoon, } from "@fortawesome/free-solid-svg-icons";
+import { faBorderAll, faCross, faEllipsisVertical, faEye, faFilter, faList, faMoon, faPrint, } from "@fortawesome/free-solid-svg-icons";
 import { adminContext } from './adminContext';
 const Orders = () => {
   const { 
@@ -71,31 +71,29 @@ const Orders = () => {
       <div className={`products-area-wrapper ${isGridView ? 'gridView' : 'tableView'}`}>
         <div className="products-header">
           <div className="product-cell image fw-bold">
-            Title
+            Invoice Id
 
           </div>
-          <div className="product-cell category">
-            Category
+          <div className="product-cell category fw-bold">
+            customer
 
           </div>
-          <div className="product-cell status-cell">
-            Author
-
-          </div>
-          <div className="product-cell sales">
-            Published
-
-          </div>
-          <div className="product-cell stock">
-            Comments
-
-
-          </div>
-          <div className="product-cell price">
+          <div className="product-cell status-cell fw-bold">
+            
             Status
 
           </div>
-          <div className="product-cell price">
+
+          <div className="product-cell stock fw-bold">
+            Quantity
+
+
+          </div>
+          <div className="product-cell price fw-bold">
+          Price
+
+          </div>
+          <div className="product-cell price fw-bold">
             Action
 
           </div>
@@ -105,30 +103,25 @@ const Orders = () => {
             <FontAwesomeIcon icon={faEllipsisVertical} />
           </button>
           <div className="product-cell image">
-            <img
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-              alt="product"
-            />
-            <span>Pakistan has four...</span>
+
+            <span>#12345</span>
           </div>
           <div className="product-cell category">
-            <span className="cell-label">Category:</span>Furniture
+            <span className="cell-label">Customer:</span>Furniture
           </div>
           <div className="product-cell status-cell">
             <span className="cell-label">Status:</span>
-            <span className="status active">Active</span>
+            <span className="status active">Delivered</span>
           </div>
-          <div className="product-cell sales">
-            <span className="cell-label">Author:</span>11
-          </div>
+
           <div className="product-cell stock">
-            <span className="cell-label">Published:</span>36
+            <span className="cell-label">Quantity:</span>36
           </div>
           <div className="product-cell price">
-            <span className="cell-label">Comments:</span>$560
+            <span className="cell-label">Price:</span>$560
           </div>
           <div className="product-cell action">
-            <span className="cell-label">Comments:</span>$560
+            <span className="cell-label">Action:</span> <FontAwesomeIcon icon={faPrint}/> <Link to="/invoice"><FontAwesomeIcon icon={faEye} className='mx-3'/></Link>  
           </div>
         </div>
         <div className="products-row">

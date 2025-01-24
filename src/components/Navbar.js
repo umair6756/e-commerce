@@ -158,7 +158,7 @@ const Navbar = () => {
               <li><Link to='/admin'>Dashboard</Link></li>
               <li><Link to='/view'>View</Link></li>
               <li><Link to='/invoice'>Invoice</Link></li>
-              <li><Link to='/productform'>productForm</Link></li>
+              <li><Link to='/chart'>Chart</Link></li>
 
 
 

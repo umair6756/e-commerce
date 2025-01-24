@@ -52,8 +52,8 @@ document.documentElement.setAttribute('data-theme', theme);
 
   return (
     <>
-    <Sidebar/>
-    <div className="product-add-container">
+    
+    <div className="product-add-container" style={{paddingTop:'5rem'}}>
 
 <button className="mode-switch" title="Switch Theme" onClick={toggleTheme}>
         <FontAwesomeIcon icon={faMoon} className='fs-3' style={{transform:"rotate(-25deg)"}}/>
@@ -108,10 +108,17 @@ document.documentElement.setAttribute('data-theme', theme);
           <div className="form-group">
             <label>Size</label>
             <div className="size-picker">
+            <label  className="size-option"><input type="checkbox" name="size" value="XS" onChange={handleChange} /> XS</label>
               <label className="size-option"><input type="checkbox" name="size" value="S" onChange={handleChange} /> S</label>
               <label  className="size-option"><input type="checkbox" name="size" value="M" onChange={handleChange} /> M</label>
               <label  className="size-option"><input type="checkbox" name="size" value="L" onChange={handleChange} /> L</label>
               <label  className="size-option"><input type="checkbox" name="size" value="XL" onChange={handleChange} /> XL</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="XXL" onChange={handleChange} /> XXL</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="3XL" onChange={handleChange} /> 3XL</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="4XL" onChange={handleChange} /> 4XL</label>
+              <label  className="size-option"><input type="checkbox" name="size" value="5XL" onChange={handleChange} /> 5XL</label>
+
+
             </div>
           </div>
           <div className="form-group">
@@ -152,8 +159,7 @@ document.documentElement.setAttribute('data-theme', theme);
       </form>
 
       {/* Product Preview Card */}
-      <div className="product-preview">
-        <h3>Product Preview</h3>
+      <div className="product-preview my-3">
         <div className="preview-card">
           {product.image && <img src={product.image} alt="Product" />}
           <h4>{product.name || "Product Name"}</h4>

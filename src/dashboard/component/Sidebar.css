@@ -14,14 +14,14 @@
                 --box1-color:  #4DA3FF;
                 --box2-color:  #FFE6AC;
                 --box3-color:  #E7D1FC;
-                --box4-color: rgba(21, 30, 47,1);
+                --box4-color: #9FE2BF;
                 --background-color: #fff;
                 --secondary-color: #f3f6fd;
                 --Border-color: #f3f6fd;
 
                 --text-color: #101827;
 
-                --shodow: 0px 6px 12px rgba(21, 30, 47, 0.6);
+                --shodow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
               }
               [data-theme="dark"] {
                 --box1-color:  rgba(21, 30, 47,1);
@@ -266,7 +266,7 @@
                 width: 230px;
                 /* border-radius: 20px; */
                 /* box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751); */
-                box-shadow: 0px 4px 4px rgba(21, 30, 47,1);
+                box-shadow: var(--shodow);
                 padding: 20px;
                 display: flex;
                 align-items: center;
@@ -323,7 +323,7 @@
                 margin: 70px auto 0px auto;
                 background-color:  var(--secondary-color);
                 /* border-radius: 30px; */
-                box-shadow: 3px 3px 10px rgb(188, 188, 188);
+                box-shadow: var(--shodow);
                 padding: 0px 20px 20px 20px;
               }
               .report-header {
@@ -654,18 +654,21 @@
 
 
 
-/* Text ieditot */
+/* blog post form */
 
 
 
 /* Main Container */
 .advanced-blog-form-container {
-  max-width: 500px;
-  margin: 2rem auto;
+  max-width: 100%;
+  /* margin: 2rem auto; */
   padding: 1.5rem;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+
 }
 
 /* Form */
@@ -693,6 +696,7 @@ label {
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: #333;
+  margin-top: 3rem;
 }
 
 input,
@@ -735,6 +739,57 @@ select:focus {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+
+
+
+/* Hides the file input box */
+#picture__input {
+  display: none;
+}
+
+/* Styling for the main label container */
+.picture {
+  width: 15rem;
+  height: 15rem;
+  aspect-ratio: 16/9; /* Maintain a fixed aspect ratio */
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed currentcolor;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  outline: none;
+  overflow: hidden;
+  position: relative; /* Ensures child elements like img are properly positioned */
+}
+
+
+
+/* Ensure the image fills the container without distorting */
+.picture__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps the image proportionate */
+  position: absolute; /* Positioned within the .picture container */
+  top: 0;
+  left: 0;
+}
+
+/* Placeholder text styling */
+.picture__image p {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  z-index: 1; /* Ensures the text is above the image initially */
+}
+
+
+
+
 
 /* Button */
 .btn-submit {
@@ -781,21 +836,23 @@ select:focus {
 }
 
 .image-controls {
-  position: absolute;
-  top: 50%;
-
-  background-color: #fff;
-  border: 1px solid #ddd;
+  position: relative;
+  top: -20%;
+ 
+  background-color: transparent;
+  /* border: 1px solid #ddd; */
   padding: 5px;
   z-index: 1000;
 }
 
 .image-controls button {
-  padding: 5px 10px;
+  padding: 5px 5px;
   cursor: pointer;
-  background-color: #007bff;
+  margin-left: 1rem;
+  /* background-color: #007bff; */
+  border: 1px solid #222;
   color: black;
-  border: none;
+  /* border: none; */
   border-radius: 4px;
   font-size: 14px;
 }
@@ -811,7 +868,16 @@ select:focus {
 /* Responsive Design */
 @media (max-width: 768px) {
   .advanced-blog-form-container {
-    padding: 1rem;
+    padding-left: 0 !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .advanced-blog-form{
+    width: 100%;
+    padding-left: 1rem !important;
+    padding-right: 0 !important;
   }
 
   input,
@@ -821,6 +887,9 @@ select:focus {
 
   .btn-submit {
     font-size: 0.9rem;
+  }
+  .blog-heroImage{
+    padding-top: 0rem !important;
   }
 }
 
@@ -832,5 +901,91 @@ select:focus {
 
 
 
+
+
+
+
+
+
+
+
+
+/* =======  Chart   ========= */
+
+
+
+
+
+
+
+
+.chart-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.chart {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .kpi-container, .chart-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chart-contain {
+  width: 100%;
+  max-width: 900px; /* Set a max width for larger screens */
+  margin: 20px auto; /* Center the chart horizontally */
+  padding: 20px;
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.chart-contain h2 {
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+canvas {
+  width: 100% !important; /* Make the canvas fill its container */
+  height: auto !important; /* Adjust height proportionally */
+  max-height: 400px; /* Optional: Set a max height */
+  border-radius: 8px;
+}
 
 

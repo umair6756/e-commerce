@@ -29,6 +29,31 @@ const BlogPostForm = () => {
     setBlogData({ ...blogData, heroImage: file });
   };
 
+
+
+  const [image, setImage] = useState(null);
+  const pictureImageTxt = "Choose an image";
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        setImage(event.target.result); // Set the base64 image data to state
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      setImage(null); // Reset image if no file is selected
+    }
+  };
+
+
+
+
+
   // Handle content change in ReactQuill
   const handleContentChange = (value) => {
     setBlogData({ ...blogData, content: value });
@@ -107,8 +132,8 @@ const BlogPostForm = () => {
   ];
 
   return (
-    <div className=".advanced-blog-form-container">
-    <div className="advanced-blog-form">
+    <div className="advanced-blog-form-container py-5 ">
+    <div className="advanced-blog-form py-5">
       <form onSubmit={handleSubmit}>
         <h1>Create Blog Post</h1>
 
@@ -146,13 +171,7 @@ const BlogPostForm = () => {
           placeholder="Enter Blog Description"
         ></textarea>
 
-        <label>Hero Image</label>
-        <input
-          type="file"
-          name="heroImage"
-          accept="image/*"
-          onChange={handleHeroImageChange}
-        />
+
 
         <label>Blog Content</label>
         <div onClick={handleImageClick}>
@@ -179,8 +198,30 @@ const BlogPostForm = () => {
           </div>
         )}
 
-        <button type="submit">Save Blog</button>
+        <button type="submit" className="btn-submit my-3">Save Blog</button>
       </form>
+    </div>
+
+    <div className="blog-heroImage" style={{paddingTop:'5rem'}}>
+    <div>
+      <label className="picture" htmlFor="picture__input" tabIndex={0}>
+        <div className="picture__image">
+          {image ? (
+            <img src={image} alt="Uploaded Preview" className="picture__img" />
+          ) : (
+            <p>{pictureImageTxt}</p>
+          )}
+        </div>
+      </label>
+      <input
+        id="picture__input"
+        type="file"
+        className="picture__input"
+        accept="image/*"
+        onChange={handleImageChange}
+      />
+    </div>
+
     </div>
     </div>
   );

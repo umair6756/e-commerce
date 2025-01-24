@@ -47,17 +47,7 @@
 /* ============== New Arrival Banner =============  */
 
 /* General Container Styling */
-.banner-container {
-  background: linear-gradient(135deg, #C19A6B, #D1A77C, #C19A6B);
 
-
-
-
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  animation: infiniteMove 3s ease-in-out infinite;
-}
 
 /* @keyframes infiniteMove {
   0% {
@@ -581,4 +571,14 @@
     width: 100px;
     margin-left: 3rem;
   }
+  
+
+
+
+
+
+
+  /* ===========   cupons    ============= */
+
+
   

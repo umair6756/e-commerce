@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown, faArrowUp, faArrowsUpDown, faBorderAll, faCross, faEllipsisVertical, faFilter, faList, faMoon, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from '../component/Sidebar';
 import { adminContext } from '../component/adminContext'
+import { Link } from 'react-router-dom';
 
 
 const ViewProducts = () => {
@@ -57,7 +58,10 @@ const ViewProducts = () => {
       <button className="mode-switch" title="Switch Theme" onClick={toggleTheme}>
         <FontAwesomeIcon icon={faMoon} className='fs-3' style={{transform:"rotate(-25deg)"}}/>
       </button>
-      <button className="app-content-headerButton" onClick={toggleForm}>Add Product</button>
+      <Link to='/productform'>
+      <button className="app-content-headerButton">Add Product</button>
+
+      </Link>
     </div>
     <div className="app-content-actions">
       <input className="search-bar" placeholder="Search..." type="text" />
