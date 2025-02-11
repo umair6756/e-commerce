@@ -66,11 +66,17 @@ document.documentElement.setAttribute('data-theme', theme);
         <div className="form-section image-section">
           <h3>Upload Product Image</h3>
           <div className="border-span px-0 mx-0 w-100"></div>
+          <div className="d-flex justify-content-center" style={{marginBottom:'2rem'}}>
+                <label htmlFor="image" className="imageLabel ">Upload an Image</label>
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleChange}
 
-          <label>ADD IMAGE 
-          <input type="file" name="image" accept="image/*" onChange={handleChange} />
-            
-             </label>
+                />
+                </div>
         </div>
 
         {/* Product Information Section */}

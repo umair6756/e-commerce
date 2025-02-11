@@ -10,23 +10,23 @@ const Checkout = () => {
     return (
         <>
         <HeroSection heroBackground="checkout-hero"/>
-        <div className='checkout'>
+        <div className='checkoutPage'>
 
             <h2 className='text-center my-5'>Checkout Form</h2>
            
-            <main className='w-100'>
+            <div className='checkout-main w-100'>
 
                 <section class="checkout-form">
                     <form action="#!" method="get">
                         <h6>Contact information</h6>
-                        <div class="form-control " style={{border:"none"}}>
+                        <div class="checkout-form-control " style={{border:"none"}}>
                             <label for="checkout-email">E-mail</label>
                             <div >
                                 <span class="fa fa-envelope"></span>
                                 <input type="email" id="checkout-email" name="checkout-email" placeholder="Enter your email..." />
                             </div>
                         </div>
-                        <div class="form-control">
+                        <div class="checkout-form-control">
                             <label for="checkout-phone">Phone</label>
                             <div>
                                 <span class="fa fa-phone"></span>
@@ -35,29 +35,29 @@ const Checkout = () => {
                         </div>
                         <br></br>
                         <h6>Shipping address</h6>
-                        <div class="form-control">
+                        <div class="checkout-form-control">
                             <label for="checkout-name">Full name</label>
                             <div>
                                 <span class="fa fa-user-circle"></span>
                                 <input type="text" id="checkout-name" name="checkout-name" placeholder="Enter you name..." />
                             </div>
                         </div>
-                        <div class="form-control">
+                        <div class="checkout-form-control">
                             <label for="checkout-address">Address</label>
                             <div>
                                 <span class="fa fa-home"></span>
                                 <input type="text" name="checkout-address" id="checkout-address" placeholder="Your address..." />
                             </div>
                         </div>
-                        <div class="form-control">
+                        <div class="checkout-form-control">
                             <label for="checkout-city">City</label>
                             <div>
                                 <span class="fa fa-building"></span>
                                 <input type="text" name="checkout-city" id="checkout-city" placeholder="Your city..." />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-control">
+                        <div class="checkout-form-group">
+                            <div class="checkout-form-control">
                                 <label for="checkout-country">Country</label>
                                 <div>
                                     <span class="fa fa-globe"></span>
@@ -71,7 +71,7 @@ const Checkout = () => {
                                     </datalist>
                                 </div>
                             </div>
-                            <div class="form-control">
+                            <div class="checkout-form-control">
                                 <label for="checkout-postal">Postal code</label>
                                 <div>
                                     <span class="fa fa-archive"></span>
@@ -79,11 +79,11 @@ const Checkout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="form-control checkbox-control">
+                        <div class="checkout-form-control checkbox-control">
                             <input type="checkbox" name="checkout-checkbox" id="checkout-checkbox" />
                             <label for="checkout-checkbox">Save this information for next time</label>
                         </div>
-                        <div class="form-control-btn">
+                        <div class="checkout-form-control-btn">
                             <button>Continue</button>
                         </div>
                     </form>
@@ -94,17 +94,17 @@ const Checkout = () => {
                     {cart.map((prod, index) => (
                         <div key={index} class="checkout-lists">
                             
-                            <div class="card d-flex flex-row">
-                                <div class="card-image"><img src={prod.image} alt="" /></div>
-                                <div class="card-details">
-                                    <div class="card-name">{prod.name}</div>
-                                    <div class="card-price">                                {prod.onSale ? (
+                            <div class="checkout-card d-flex flex-row">
+                                <div class="checkout-card-image"><img src={prod.image} alt="" /></div>
+                                <div class="checkout-card-details">
+                                    <div class="checkout-card-name">{prod.name}</div>
+                                    <div class="checkout-card-price">                                {prod.onSale ? (
                                        <>
                                       <span>{(prod.price - (prod.price * prod.sale / 100))* (prod.quantity).toFixed(2)}</span>
                                       </>
                                 ): prod.price * prod.quantity}
                                 </div>
-                                    <div class="card-wheel">
+                                    <div class="checkout-card-wheel">
                                         <button onClick={() => decreament(index)}>-</button>
                                         <span>{prod.quantity}</span>
                                         <button onClick={() => increament(index)}>+</button>
@@ -123,7 +123,7 @@ const Checkout = () => {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
 
 
         </div>

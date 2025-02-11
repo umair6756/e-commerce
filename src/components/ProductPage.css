@@ -68,12 +68,54 @@ body {
     border: none;
   }
 
-  input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-  
+  .productPage-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-left: 2rem;
   }
+  
+  .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .productPage-checkbox span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 1px solid #999;
+    transition: background-color 0.2s ease;
+  }
+  
+  .productPage-checkbox input:checked + span {
+    background-color: #C19A6B;
+    border-color: #C19A6B;
+  }
+  
+  .productPage-checkbox span:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .productPage-checkbox input:checked + span:after {
+    display: block;
+  }
+  
 
 
 

@@ -49,9 +49,16 @@ const ProductPage = () => {
 
 
     const filteredProducts = products.filter((product) => {
-        const matchesSearch = product.name
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase());
+        const matchesSearch = searchTerm
+        .toLowerCase()
+        .replace(/\s+/g, "") // Search term se spaces hatao
+        .split("") // Har character ko tod do
+        .every((char, index) => 
+          product.name.toLowerCase().replace(/\s+/g, "").includes(char)
+        );
+      
+    
+    
         const matchesCategory =
             Object.keys(categories).some((key) => categories[key] && product.category === key) || !Object.values(categories).includes(true);
         const matchesBrand =
@@ -83,15 +90,16 @@ const ProductPage = () => {
                 
                 
                 {Object.keys(categories).map((category) => (
-                    <label key={category}>
+                    <label key={category} className="productPage-checkbox my-5">
                         <input
                             type="checkbox"
                             name={category}
                             checked={categories[category]}
                             onChange={handleCategoryChange}
-                            className="mx-3 my-4"
+                            
                             
                         />
+                        <span></span>
                         {category}
                     </label>
                 ))}
@@ -101,16 +109,18 @@ const ProductPage = () => {
                 <h3>Brands</h3>
                 
                 {Object.keys(brands).map((brand) => (
-                    <label key={brand}>
+                    <label key={brand} className="productPage-checkbox my-5">
                         <input
                             type="checkbox"
                             name={brand}
                             checked={brands[brand]}
                             onChange={handleBrandChange}
-                            className="mx-3 my-4"
+                            
                             
                         />
+                        <span></span>
                         {brand}
+                        
                     </label>
                 ))}
                 

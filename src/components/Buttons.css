@@ -63,12 +63,31 @@
 
 /* Header Styling */
 .banner-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
+  width: 100%;
+}
+
+.banner-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.apply-coupon {
+  font-weight: bold;
+  color: #C19A6B;
+  background: #ffffff33;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.coupon-code:hover {
+  background: #ffffff66;
 }
 
 /* Countdown Styling */
@@ -96,7 +115,7 @@
 .time-box {
   font-size: 3rem;
   font-weight: bold;
-  color: #fff;
+  color: #C19A6B;
   background: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 8px;
@@ -136,19 +155,8 @@
   transform: scale(1.1);
 }
 
-/* Image Styling */
-.banner-image {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
 
-.banner-image:hover {
-  transform: scale(1.05);
-}
+
 
 /* Responsive Layout */
 @media (max-width: 767px) {
@@ -578,7 +586,5 @@
 
 
 
-  /* ===========   cupons    ============= */
 
 
-  

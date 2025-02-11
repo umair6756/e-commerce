@@ -35,7 +35,7 @@ const AddToCart = () => {
 
             {cart.map((item, index) => (
               <div key={index} className="row border-bottom">
-                <div className="row main align-items-center">
+                <div className="row add-to-cart-main align-items-center">
                   <div className="col-2">
                     <img className="img-fluid" src={item.image} />
 

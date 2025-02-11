@@ -3,7 +3,7 @@
 
 
 
-.checkout{
+.checkoutPage{
   font-family: "Poppins", sans-serif;
   /* height: 100vh; */
   width: 80%;
@@ -11,31 +11,31 @@
   padding: 50px 0px 0px;
   color: #4E5150;
 }
-body main {
+body .checkout-main {
   height: auto;
   display: flex;
   column-gap: 100px;
 }
-body main .checkout-form {
+body .checkout-main .checkout-form {
   width: 50%;
 }
-body main .checkout-form form h6 {
+body .checkout-main .checkout-form form h6 {
   font-size: 12px;
   font-weight: 500;
 }
-body main .checkout-form form .form-control {
+body .checkout-main .checkout-form form .checkout-form-control {
   margin: 10px 0px;
   position: relative;
   border: none;
   border-radius: 0;
 }
-body main .checkout-form form .form-control label:not([for=checkout-checkbox]) {
+body .checkout-main .checkout-form form .checkout-form-control label:not([for=checkout-checkbox]) {
   display: block;
   font-size: 10px;
   font-weight: 500;
   margin-bottom: 2px;
 }
-body main .checkout-form form .form-control input:not([type=checkbox]) {
+body .checkout-main .checkout-form form .checkout-form-control input:not([type=checkbox]) {
   width: 100%;
   padding: 10px 10px 10px 40px;
   border-radius: 0px;
@@ -44,39 +44,39 @@ body main .checkout-form form .form-control input:not([type=checkbox]) {
   font-size: 12px;
   font-weight: 700;
 }
-body main .checkout-form form .form-control input:not([type=checkbox])::placeholder {
+body .checkout-main .checkout-form form .checkout-form-control input:not([type=checkbox])::placeholder {
   font-size: 10px;
   font-weight: 500;
 }
-body main .checkout-form form .form-control label[for=checkout-checkbox] {
+body .checkout-main .checkout-form form .checkout-form-control label[for=checkout-checkbox] {
   font-size: 9px;
   font-weight: 500;
   line-height: 10px;
 }
-body main .checkout-form form .form-control > div {
+body .checkout-main .checkout-form form .checkout-form-control > div {
   position: relative;
 }
-body main .checkout-form form .form-control > div span.fa {
+body .checkout-main .checkout-form form .checkout-form-control > div span.fa {
   position: absolute;
   top: 50%;
   left: 0%;
   transform: translate(15px, -50%);
 }
-body main .checkout-form form .form-group {
+body .checkout-main .checkout-form form .checkout-form-group {
   display: flex;
   column-gap: 25px;
 }
-body main .checkout-form form .checkbox-control {
+body .checkout-main .checkout-form form .checkbox-control {
   display: flex;
   align-items: center;
   column-gap: 10px;
 }
-body main .checkout-form form .form-control-btn {
+body .checkout-main .checkout-form form .checkout-form-control-btn {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-body main .checkout-form form .form-control-btn button {
+body .checkout-main .checkout-form form .checkout-form-control-btn button {
   padding: 10px 25px;
   font-size: 10px;
   color: #fff;
@@ -87,34 +87,34 @@ body main .checkout-form form .form-control-btn button {
   font-weight: 200;
   cursor: pointer;
 }
-body main .checkout-details {
+body .checkout-main .checkout-details {
   width: 40%;
 }
-body main .checkout-details .checkout-details-inner {
+body .checkout-main .checkout-details .checkout-details-inner {
   background: #F2F2F2;
   border-radius: 10px;
   padding: 20px;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   margin-bottom: 30px;
   border-radius: 0;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card {
   width: 100%;
   display: flex;
   column-gap: 20px;
   border: none;
   border-radius: 0;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-image {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-image {
   width: 35%;
   overflow: hidden;
   
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-image img {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .ccheckout-ard-image img {
   max-width: 100%;
   object-fit: fill;
   height: 5rem;
@@ -122,26 +122,26 @@ body main .checkout-details .checkout-details-inner .checkout-lists .card .card-
   transform: scale(1.3);
   overflow: hidden;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details {
   display: flex;
   flex-direction: column;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details .card-name {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details .checkout-card-name {
   font-size: 12px;
   font-weight: 500;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details .card-price {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details .checkout-card-price {
   font-size: 13px;
   font-weight: 500;
   color: #F2994A;
   margin-top: 5px;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details .card-price span {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details .checkout-card-price span {
   color: #4E5150;
   color: #F2994A;
   margin-left: 10px;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details .card-wheel {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details .checkout-card-wheel {
   margin-top: 17px;
   /* border: 0.2px solid #4e515085; */
   width: 90px;
@@ -151,7 +151,7 @@ body main .checkout-details .checkout-details-inner .checkout-lists .card .card-
   display: flex;
   justify-content: space-between;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details .card-wheel button {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details .checkout-card-wheel button {
   background:transparent;
   color: #828282;
   width: 20px;
@@ -164,17 +164,17 @@ body main .checkout-details .checkout-details-inner .checkout-lists .card .card-
   border-radius: 3px;
   font-weight: 500;
 }
-body main .checkout-details .checkout-details-inner .checkout-lists .card .card-details .card-wheel button:hover{
+body .checkout-main .checkout-details .checkout-details-inner .checkout-lists .checkout-card .checkout-card-details .checkout-card-wheel button:hover{
   color: #F2994A;
 }
-body main .checkout-details .checkout-details-inner .checkout-shipping, body main .checkout-details .checkout-details-inner .checkout-total {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-shipping, body main .checkout-details .checkout-details-inner .checkout-total {
   display: flex;
   font-size: 16px;
   padding: 5px 0px;
   border-top: 1px solid #BDBDBD;
   justify-content: space-between;
 }
-body main .checkout-details .checkout-details-inner .checkout-shipping p, body main .checkout-details .checkout-details-inner .checkout-total p {
+body .checkout-main .checkout-details .checkout-details-inner .checkout-shipping p, body main .checkout-details .checkout-details-inner .checkout-total p {
   font-size: 10px;
   font-weight: 500;
 }
@@ -182,22 +182,22 @@ body main .checkout-details .checkout-details-inner .checkout-shipping p, body m
 
 @media screen and (max-width: 1024px) {
  
-  body main {
+  body .checkout-main {
     column-gap: 70px;
   }
 }
 @media screen and (max-width: 768px) {
 
-  body main {
+  body .checkout-main {
     flex-direction: column-reverse;
     height: auto;
     margin-bottom: 50px;
   }
-  body main .checkout-form {
+  body .checkout-form {
     width: 100%;
     margin-top: 35px;
   }
-  body main .checkout-details {
+  body .checkout-details {
     width: 100%;
   }
   body footer {

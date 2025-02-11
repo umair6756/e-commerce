@@ -24,7 +24,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Product from "./pages/Product";
-import APIKey from "./components/APIKey";
+
 import ProductDetailPage from "./pages/ProductDetailPage";
 import AddToCartPage from "./pages/AddToCartPage";
 import { CartProvider } from "./components/CartContext";
@@ -58,6 +58,7 @@ import NewChart from "./dashboard/component/Chart";
 import AreaChart from "./dashboard/component/Chart";
 import UserReviews from "./dashboard/component/UserReviews";
 import Cupon from "./dashboard/component/Cupon";
+
 
 
 
@@ -101,7 +102,7 @@ function App() {
             <Route path="/contact" element={<Contact/>} ></Route>
             <Route path="/Faq" element={<FAQ/>}></Route>
             <Route path="/product" element={<Product/>}></Route>
-            <Route path="/product" element={<ProductDetailPage/>}></Route>
+            
             <Route path="/cart" element={<AddToCartPage/>}></Route>
             <Route path="/product/:id" element={<ProductDetailPage/>}></Route>
             <Route path="/wishlest" element={<WishlestPage/>}></Route>
@@ -124,7 +125,6 @@ function App() {
             {/* <Route path="/chart" element={<AreaChart/>}></Route> */}
             <Route path="/reviews" element={<UserReviews/>}></Route>
             <Route path="/cupons" element={<Cupon/>}></Route>
-
           
 
 

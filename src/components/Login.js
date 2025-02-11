@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Wishlest.css'
+import './Login.css'
 import image1 from '../banners-image/hero/about-hero.jpg'
 import validator from 'validator'
 import { HeroSection } from './Buttons'
@@ -50,13 +50,13 @@ const Login = () => {
                             <input type="text" placeholder="Enter your email" />
                             <input type="password" placeholder="Enter your password" />
                             <a href="#">Forgot password?</a>
-                            <input type="button" className="button" defaultValue="Login" />
+                            <input type="button" className="login-button" defaultValue="Login" />
                         </form>
                         <div className="signup">
                             <span className="signup">
                                 Don't have an account?
-                                <label htmlFor="check">Signup</label>
-                            </span>
+                                <label htmlFor="check" className='login-label'>Signup</label>
+                            </span> 
                         </div>
                     </div>
                     <div className="registration form">
@@ -65,12 +65,12 @@ const Login = () => {
                             <input type="text" placeholder="Enter your email" required="" />
                             <input type="password" placeholder="Create a password" onChange={(e) => setPassword(e.target.value)} required="" />
                             <input type="password" placeholder="Confirm your password" onChange={(e) => setPassword(e.target.value)} required="" />
-                            <input type="button" className="button" defaultValue="Signup" onClick={passwordValidation} />
+                            <input type="button" className="login-button" defaultValue="Signup" onClick={passwordValidation} />
                         </form>
                         <div className="signup">
                             <span className="signup">
                                 Already have an account?
-                                <label htmlFor="check">Login</label>
+                                <label htmlFor="check" className='login-label'>Login</label>
                             </span>
                         </div>
                     </div>
